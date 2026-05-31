@@ -1311,34 +1311,59 @@
     .hamburger { display: flex; }
     .nav-links { display: none; }
 
+    .hero-stat-num { font-size: 28px; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .hero h1 { font-size: 32px; }
     .hero-sub { font-size: 16px; }
 
-    .audience-grid { grid-template-columns: 1fr; gap: 24px; }
-    .split-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
-    .cert-grid { grid-template-columns: 1fr; }
-    .form-grid { grid-template-columns: 1fr; }
-    .price-cards { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .tabs { overflow-x: auto; }
+    /* Force all two-column grids to single column */
+    .audience-grid,
+    .split-grid,
+    .services-grid,
+    .steps,
+    .cert-grid,
+    .price-cards,
+    .footer-top,
+    .form-grid,
+    .hero-promise {
+      grid-template-columns: 1fr !important;
+      gap: 24px;
+    }
 
-    .compare-table { display: block; overflow-x: auto; }
+    /* Fix comparison table */
+    .compare-table { 
+      display: block; 
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
 
+    /* Fix section padding */
     section { padding: 0 1rem; }
     .section-inner { padding: 48px 0; }
+    .split .section-inner { padding: 48px 0; }
+    .contractors-section .section-inner { padding: 48px 0; }
 
+    /* Fix difference strip */
     .difference-inner { flex-direction: column; gap: 16px; }
     .difference-items { flex-direction: column; gap: 12px; }
 
+    /* Fix CTA buttons */
     .hero-ctas { flex-direction: column; }
     .hero-ctas a { text-align: center; }
-
     .cta-band-btns { flex-direction: column; align-items: center; }
 
+    /* Fix footer */
     .footer-bottom { flex-direction: column; text-align: center; }
+
+    /* Fix tabs */
+    .tabs { overflow-x: auto; white-space: nowrap; }
+
+    /* Fix audience CTA box */
+    .audience-cta-box { margin-top: 0; }
+
+    /* Ensure nothing overflows */
+    * { max-width: 100%; box-sizing: border-box; }
+    img, table { max-width: 100%; }
   }
 </style>
 </head>
