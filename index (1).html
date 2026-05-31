@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HomeGuard Contractor Academy — New Jersey's premier contractor certification program. HomeGuard Gold Seal certified contractors are trained, vetted, and backed by Success Institute of NJ. Submit your project or earn your certification today.">
+<title>HomeGuard Contractor Academy | Success Institute of NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A6B;
+    --navy-dark: #0F2347;
+    --navy-light: #2A4F8A;
+    --gold: #B8972A;
+    --gold-light: #D4AF3A;
+    --gold-pale: #FDF3DC;
+    --gold-mid: #E8C85A;
+    --cream: #FAFAF7;
+    --white: #FFFFFF;
+    --gray-100: #F4F4F0;
+    --gray-200: #E8E8E2;
+    --gray-400: #9B9B8E;
+    --gray-600: #5A5A52;
+    --gray-800: #2C2C28;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--gray-800);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy-dark);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    flex-shrink: 0;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-seal {
+    width: 36px;
+    height: 36px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--navy-dark);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.3px;
+  }
+
+  .nav-name span {
+    color: var(--gold-light);
+  }
+
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy-dark) !important;
+    padding: 8px 20px !important;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* HERO */
+  .hero {
+    background: var(--navy-dark);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 2rem 80px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(184,151,42,0.12);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    right: -40px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(184,151,42,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(184,151,42,0.15);
+    border: 1px solid rgba(184,151,42,0.3);
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 6vw, 72px);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    max-width: 700px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy-dark);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    background: rgba(184,151,42,0.08);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 40px;
+    max-width: 900px;
+  }
+
+  .hero-stat {
+    padding: 0 32px 0 0;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat:last-child {
+    border-right: none;
+    padding-left: 32px;
+    padding-right: 0;
+  }
+
+  .hero-stat-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+
+  /* AUDIENCE SECTIONS */
+  .split { background: var(--white); padding: 0 2rem; }
+  
+  .contractors-section { 
+    background: var(--navy-dark) !important;
+    margin-top: 0;
+    padding: 0 2rem;
+  }
+
+  .contractors-section .section-eyebrow {
+    color: var(--gold-light);
+  }
+
+  .contractors-section .section-title {
+    color: var(--white) !important;
+  }
+
+  .contractors-section .section-lead {
+    color: rgba(255,255,255,0.7) !important;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 40px;
+    align-items: start;
+  }
+
+  .audience-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .audience-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 17px;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .audience-benefits.contractors li {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .benefit-check-lg {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(27,58,107,0.12);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .benefit-check-lg.gold {
+    background: rgba(184,151,42,0.2);
+    color: var(--gold-light);
+  }
+
+  .audience-cta-box {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 36px 32px;
+    border-top: 4px solid var(--gold);
+  }
+
+  .audience-cta-box.contractors {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(184,151,42,0.4);
+    border-top: 4px solid var(--gold);
+  }
+
+  .audience-cta-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+  }
+
+  .contractors-title {
+    color: #D4AF3A !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  .contractors-text {
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  .audience-cta-text {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .split .section-inner { padding: 80px 0; }
+  .contractors-text { color: rgba(255,255,255,0.7) !important; }
+
+  /* DIFFERENCE STRIP */
+  .difference {
+    background: var(--navy);
+    padding: 24px 2rem;
+  }
+
+  .difference-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .difference-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .difference-items {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .difference-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .difference-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* SECTION SHARED */
+  section { padding: 0 2rem; }
+  section + section { margin-top: 0; }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 56px 0; overflow: hidden; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    color: var(--navy-dark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-lead {
+    font-size: 18px;
+    color: var(--gray-600);
+    max-width: 640px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* SPLIT SECTION */
+  .split {
+    background: var(--white);
+  }
+
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-top: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .split-panel {
+    padding: 48px 40px;
+    min-width: 0;
+    word-wrap: break-word;
+  }
+
+  .split-panel.contractor {
+    background: var(--navy-dark);
+  }
+
+  .split-panel.homeowner {
+    background: var(--gold-pale);
+    border: 1px solid rgba(184,151,42,0.2);
+  }
+
+  .split-panel-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .contractor .split-panel-tag {
+    background: rgba(184,151,42,0.2);
+    color: var(--gold-light);
+  }
+
+  .homeowner .split-panel-tag {
+    background: rgba(27,58,107,0.1);
+    color: var(--navy);
+  }
+
+  .split-panel h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .contractor h3 { color: var(--white); }
+  .homeowner h3 { color: var(--navy-dark); }
+
+  .split-panel p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .contractor p { color: rgba(255,255,255,0.7); }
+  .homeowner p { color: var(--gray-600); }
+
+  .split-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .split-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .contractor .split-benefits li { color: rgba(255,255,255,0.85); }
+  .homeowner .split-benefits li { color: var(--gray-600); }
+
+  .benefit-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .contractor .benefit-check {
+    background: rgba(184,151,42,0.25);
+    color: var(--gold-light);
+  }
+
+  .homeowner .benefit-check {
+    background: rgba(27,58,107,0.12);
+    color: var(--navy);
+  }
+
+  .split-btn-contractor {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy-dark);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .split-btn-contractor:hover { background: var(--gold-light); }
+
+  .split-btn-homeowner {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .split-btn-homeowner:hover { background: var(--navy-light); }
+
+  /* HOW IT WORKS */
+  .how { background: var(--cream); border-bottom: 2px solid var(--gold); }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin: 40px 0 48px;
+    border-bottom: 2px solid var(--gray-200);
+  }
+
+  .tab-btn {
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-400);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    margin-bottom: -2px;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .tab-btn.active {
+    color: var(--navy);
+    border-bottom-color: var(--gold);
+  }
+
+  .tab-btn:hover { color: var(--navy); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .step {
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--serif);
+    font-size: 56px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+
+  .step h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 10px;
+  }
+
+  .step p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .step-connector {
+    position: absolute;
+    top: 24px;
+    right: -16px;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  /* CERTIFICATION */
+  .certification { background: var(--white); border-bottom: 2px solid var(--gold); }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .cert-card {
+    border-radius: 8px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cert-card.standard {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+  }
+
+  .cert-card.gold {
+    background: var(--navy-dark);
+    border: 2px solid var(--gold);
+  }
+
+  .cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .cert-card.standard .cert-badge {
+    background: var(--gray-200);
+    color: var(--gray-600);
+  }
+
+  .cert-card.gold .cert-badge {
+    background: rgba(184,151,42,0.2);
+    color: var(--gold-light);
+  }
+
+  .cert-card h3 {
+    font-family: var(--serif);
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .cert-card.standard h3 { color: var(--navy-dark); }
+  .cert-card.gold h3 { color: var(--white); }
+
+  .cert-price {
+    margin-bottom: 24px;
+  }
+
+  .cert-price-intro {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cert-price-main {
+    font-family: var(--serif);
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .cert-card.standard .cert-price-main { color: var(--navy-dark); }
+  .cert-card.gold .cert-price-main { color: var(--gold-light); }
+
+  .cert-price-note {
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .cert-card.gold .cert-price-note { color: rgba(255,255,255,0.4); }
+
+  .cert-strikethrough {
+    font-size: 16px;
+    color: var(--gray-400);
+    text-decoration: line-through;
+    margin-left: 8px;
+  }
+
+  .cert-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .cert-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cert-card.standard .cert-features li { color: var(--gray-600); }
+  .cert-card.gold .cert-features li { color: rgba(255,255,255,0.8); }
+
+  .cert-check {
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* PORTAL */
+  .portal { background: var(--navy-dark); padding: 0 2rem; }
+  .portal .section-inner { padding: 80px 0; }
+
+  .portal .section-title { color: var(--white); }
+  .portal .section-lead { color: rgba(255,255,255,0.6); }
+  .portal .section-eyebrow { color: var(--gold-light); }
+
+  .portal-form-wrap {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 48px;
+    margin-top: 48px;
+    border-top: 4px solid var(--gold);
+  }
+
+  .portal-form-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+  }
+
+  .portal-form-sub {
+    font-size: 14px;
+    color: var(--gray-400);
+    margin-bottom: 32px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--gray-800);
+    background: var(--white);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--navy);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .form-note {
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  /* SERVICES */
+  .services { background: var(--navy-dark); border-bottom: 2px solid var(--gold); }
+  .services .section-title { color: var(--white); }
+  .services .section-lead { color: rgba(255,255,255,0.65); max-width: 680px; }
+  .services .section-eyebrow { color: var(--gold-light); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid rgba(255,255,255,0.15);
+  }
+
+  .service-card.featured {
+    background: rgba(184,151,42,0.1);
+    border: 1px solid rgba(184,151,42,0.35);
+    border-top: 3px solid var(--gold);
+    position: relative;
+  }
+
+  .service-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 12px;
+  }
+
+  .service-tag.gold { color: var(--gold-light); }
+
+  .service-fee {
+    font-family: var(--serif);
+    font-size: 48px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .service-fee.gold { color: var(--gold-light); }
+
+  .service-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+
+  .service-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .service-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .service-btn {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.2s;
+    margin-top: auto;
+  }
+
+  .service-btn:hover { background: rgba(255,255,255,0.18); }
+
+  .service-btn.gold {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border: none;
+  }
+
+  .service-btn.gold:hover { background: var(--gold-light); }
+
+  .services-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 40px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .services-note-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+  .services-note p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+  }
+
+  .services-note p strong { color: var(--white); font-weight: 600; }
+
+  .services-note p a {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .services-note p a:hover { text-decoration: underline; }
+
+  /* COMPARISON */
+  .comparison { background: var(--cream); border-bottom: 2px solid var(--gold); }
+
+  .compare-table {
+    width: 100%;
+    margin-top: 48px;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .compare-table th {
+    padding: 16px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+
+  .compare-table th:first-child { background: var(--gray-100); color: var(--gray-600); }
+  .compare-table th.homeguard { background: var(--navy-dark); color: var(--gold-light); }
+  .compare-table th.others { background: var(--gray-200); color: var(--gray-600); }
+
+  .compare-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+
+  .compare-table td:first-child { color: var(--gray-600); font-weight: 500; }
+  .compare-table td.yes { color: #2A7A3B; font-weight: 600; }
+  .compare-table td.no { color: #A33030; }
+
+  /* PRICING */
+  .pricing { background: var(--white); border-bottom: 2px solid var(--gold); }
+
+  .price-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .price-card {
+    border-radius: 8px;
+    padding: 32px 28px;
+    border: 1px solid var(--gray-200);
+  }
+
+  .price-card.featured {
+    background: var(--navy-dark);
+    border: 2px solid var(--gold);
+    position: relative;
+  }
+
+  .price-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .price-card.featured .price-card-label { color: var(--gold-light); }
+
+  .price-card h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy-dark);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .price-card.featured h3 { color: var(--white); }
+
+  .price-amount {
+    font-family: var(--serif);
+    font-size: 38px;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-card.featured .price-amount { color: var(--gold-light); }
+
+  .price-period {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-bottom: 24px;
+  }
+
+  .price-card.featured .price-period { color: rgba(255,255,255,0.4); }
+
+  .price-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .price-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--gray-600);
+  }
+
+  .price-card.featured .price-list li { color: rgba(255,255,255,0.7); }
+
+  .price-check { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    border-top: 2px solid var(--gold);
+    padding: 48px 2rem 32px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .footer-brand-name span { color: var(--gold-light); }
+
+  .footer-brand-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .footer-seal {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(184,151,42,0.12);
+    border: 1px solid rgba(184,151,42,0.25);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .footer-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .split-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .price-cards { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-seal">HG</div>
+    <span class="nav-name">Home<span>Guard</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#homeowners">For Homeowners</a></li>
+    <li><a href="#contractors">For Contractors</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#services">Our Services</a></li>
+    <li><a href="#certification">Certification</a></li>
+    <li><a href="#submit-project" class="nav-cta">Submit Your Project</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Program of Success Institute of New Jersey</div>
+    <h1>Every other platform finds you a contractor.<br><em>HomeGuard guarantees one.</em></h1>
+    <p class="hero-sub">New Jersey's only contractor certification ecosystem where every contractor is trained, vetted, and backed — and every homeowner is protected from estimate to completion.</p>
+    <div class="hero-ctas">
+      <a href="#submit-project" class="btn-primary">Submit Your Project</a>
+      <a href="#contractors" class="btn-secondary">Earn Your Gold Seal</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">20</div>
+        <div class="hero-stat-label">Contractors per certified cohort</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-label">Week intensive business curriculum</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$0</div>
+        <div class="hero-stat-label">Upfront cash before contract is signed</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Backed if something goes wrong</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE STRIP -->
+<div class="difference">
+  <div class="difference-inner">
+    <span class="difference-label">The HomeGuard Standard</span>
+    <div class="difference-items">
+      <span class="difference-item">Trained & Certified Contractors</span>
+      <span class="difference-item">Standard Protective Contract</span>
+      <span class="difference-item">Milestone-Based Financing</span>
+      <span class="difference-item">Written Arbitration Backstop</span>
+      <span class="difference-item">Continuing Education Required</span>
+      <span class="difference-item">NJ DCA Compliant</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPLIT: FOR BOTH AUDIENCES -->
+<section class="split" id="homeowners">
+  <div class="section-inner">
+    <div class="section-eyebrow">For Homeowners</div>
+    <h2 class="section-title">Your project. Protected from day one.</h2>
+    <p class="section-lead">No more cash advances to contractors who disappear. No more disputes with no recourse. HomeGuard puts a standard contract in place before a single nail is driven — and stands behind every certified project.</p>
+    <div class="audience-grid">
+      <ul class="audience-benefits">
+        <li><span class="benefit-check-lg">✓</span> Submit your project and receive an accurate, unbiased estimate</li>
+        <li><span class="benefit-check-lg">✓</span> Get matched to a HomeGuard Gold Seal certified contractor</li>
+        <li><span class="benefit-check-lg">✓</span> Standard protective contract in place before work begins</li>
+        <li><span class="benefit-check-lg">✓</span> Milestone-based financing — you never fund work that isn't done</li>
+        <li><span class="benefit-check-lg">✓</span> Success Institute as written arbitrator if disputes arise</li>
+        <li><span class="benefit-check-lg">✓</span> Litigation backstop — we have your back if it comes to that</li>
+      </ul>
+      <div class="audience-cta-box">
+        <div class="audience-cta-title">Ready to protect your project?</div>
+        <p class="audience-cta-text">Submit your project details and we will review it, provide an unbiased estimate, and match you with a certified contractor — with a standard protective contract in place before any work begins.</p>
+        <a href="#submit-project" class="btn-primary">Submit Your Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="split contractors-section" id="contractors">
+  <div class="section-inner">
+    <div class="section-eyebrow">For Contractors</div>
+    <h2 class="section-title">Stop chasing bad clients.<br>Start earning better ones.</h2>
+    <p class="section-lead">The HomeGuard Gold Seal is not a compliance checkbox. It is a business credential that signals to homeowners you operate at the highest standard — and gives you access to a pre-qualified project pipeline.</p>
+    <div class="audience-grid">
+      <ul class="audience-benefits contractors">
+        <li><span class="benefit-check-lg gold">✓</span> Six-week business certification covering law, finance, and operations</li>
+        <li><span class="benefit-check-lg gold">✓</span> Access to pre-qualified homeowner project referrals</li>
+        <li><span class="benefit-check-lg gold">✓</span> Standard contract framework that protects you legally</li>
+        <li><span class="benefit-check-lg gold">✓</span> NJ DCA continuing education credits included annually</li>
+        <li><span class="benefit-check-lg gold">✓</span> Arbitration backstop reduces your litigation exposure</li>
+        <li><span class="benefit-check-lg gold">✓</span> Gold Seal on your truck, site, and marketing materials</li>
+      </ul>
+      <div class="audience-cta-box contractors">
+        <div class="audience-cta-title contractors-title">Ready to earn your Gold Seal?</div>
+        <p class="audience-cta-text contractors-text">Founding cohort — 20 spots at $3,000. Standard rate is $5,000. Apply before the cohort fills.</p>
+        <a href="#certification" class="btn-primary">Earn Your Gold Seal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Process</div>
+    <h2 class="section-title">How HomeGuard works.</h2>
+    <p class="section-lead">Whether you are a homeowner protecting your investment or a contractor building your business, the process is straightforward.</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('homeowner-tab', this)">For Homeowners</button>
+      <button class="tab-btn" onclick="switchTab('contractor-tab', this)">For Contractors</button>
+    </div>
+
+    <div id="homeowner-tab" class="tab-content active">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Submit your project</h4>
+          <p>Fill out the HomeGuard project portal with your scope, timeline, and budget range. No commitment required — just the details we need to get started.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>Receive an accurate estimate</h4>
+          <p>Success Institute reviews your project and provides an independent, unbiased rough estimate — so you know what fair pricing looks like before anyone shows up at your door.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>Get matched and protected</h4>
+          <p>We match you with a HomeGuard Gold Seal certified contractor and put a standard protective contract in place. Milestone payments, arbitration clause, and full backstop included.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="contractor-tab" class="tab-content">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Apply to the Academy</h4>
+          <p>Join a cohort of 20 licensed NJ contractors for the six-week HomeGuard Contractor Academy. Founding cohort pricing available for a limited time.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>Complete the certification</h4>
+          <p>Six modules covering NJ consumer law, financial management, estimating, client communication, and scaling — plus a final compliance board review and background check.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>Earn your Gold Seal</h4>
+          <p>Receive the HomeGuard Gold Seal, access to the pre-qualified homeowner project pipeline, and NJ DCA continuing education credits. Renew annually to maintain your standing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section class="certification" id="certification">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contractor Certification</div>
+    <h2 class="section-title">The HomeGuard Gold Seal.</h2>
+    <p class="section-lead">Two certification tiers, both earned through the same rigorous six-week Academy program. One more distinguished than the other.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card standard">
+        <span class="cert-badge">Entry Tier</span>
+        <h3>HomeGuard Certified</h3>
+        <div class="cert-price">
+          <div class="cert-price-main">$3,000 <span class="cert-strikethrough">$5,000</span></div>
+          <div class="cert-price-note">Founding cohort introductory rate — 20 spots only</div>
+        </div>
+        <ul class="cert-features">
+          <li><span class="cert-check">✓</span> All six Academy modules completed</li>
+          <li><span class="cert-check">✓</span> NJ Consumer Law compliance certification</li>
+          <li><span class="cert-check">✓</span> Background and financial standing verified</li>
+          <li><span class="cert-check">✓</span> HomeGuard Certified Seal issued</li>
+          <li><span class="cert-check">✓</span> Standard network listing</li>
+          <li><span class="cert-check">✓</span> Annual renewal at $5,000 includes CE credits</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-homeowner" style="font-size:14px;">Apply to the Academy</a>
+      </div>
+
+      <div class="cert-card gold">
+        <span class="cert-badge">⭐ Distinction Tier</span>
+        <h3>HomeGuard Gold Seal</h3>
+        <div class="cert-price">
+          <div class="cert-price-intro">Earned at distinction</div>
+          <div class="cert-price-main">Gold Seal</div>
+          <div class="cert-price-note">Awarded upon peer board review at distinction level</div>
+        </div>
+        <ul class="cert-features">
+          <li><span class="cert-check">✓</span> All Certified tier requirements plus</li>
+          <li><span class="cert-check">✓</span> Distinction-level deliverables across all modules</li>
+          <li><span class="cert-check">✓</span> Peer review board evaluation passed</li>
+          <li><span class="cert-check">✓</span> Priority placement in homeowner referral network</li>
+          <li><span class="cert-check">✓</span> NJ DCA CE credits included in annual renewal</li>
+          <li><span class="cert-check">✓</span> Gold Seal for truck, website, and marketing materials</li>
+          <li><span class="cert-check">✓</span> Advanced module access at preferred rates</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-contractor" style="font-size:14px;">Apply to the Academy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEOWNER SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-eyebrow">Homeowner Services</div>
+    <h2 class="section-title">Know your numbers before you build.</h2>
+    <p class="section-lead">Most homeowner disputes start before a single nail is driven — because the budget and the project were never aligned. HomeGuard offers three services to fix that before it becomes a problem.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-tag">Entry Service</div>
+        <div class="service-fee">$150</div>
+        <h3 class="service-title">Project Readiness Consultation</h3>
+        <p class="service-desc">A 30-minute consultation with a HomeGuard advisor covering realistic NJ market costs for your project type and county, budget alignment, and a written summary you keep.</p>
+        <ul class="service-list">
+          <li>NJ market cost education by project type and county</li>
+          <li>Budget vs. scope alignment review</li>
+          <li>Project phasing recommendations if needed</li>
+          <li>Written Project Readiness Summary delivered after the call</li>
+        </ul>
+        <a href="#submit-project" class="service-btn">Book a Consultation</a>
+      </div>
+
+      <div class="service-card featured">
+        <div class="service-tag gold">Most Popular</div>
+        <div class="service-fee gold">$350</div>
+        <h3 class="service-title">Managed Bid Service</h3>
+        <p class="service-desc">HomeGuard develops your scope of work document, sends it to three to five Gold Seal certified contractors, collects and reviews every bid, and presents you with a clear recommendation — with the standard HomeGuard contract ready to sign.</p>
+        <ul class="service-list">
+          <li>Professional scope of work document prepared by HomeGuard</li>
+          <li>Sent to 3–5 HomeGuard Gold Seal certified contractors</li>
+          <li>All bids reviewed and compared by HomeGuard</li>
+          <li>Independent recommendation — best value, not just lowest price</li>
+          <li>Standard HomeGuard contract ready to execute</li>
+          <li>Escrow and milestone schedule established</li>
+        </ul>
+        <a href="#submit-project" class="service-btn gold">Get Started</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-tag">Full Service</div>
+        <div class="service-fee">$600</div>
+        <h3 class="service-title">Premium Project Launch</h3>
+        <p class="service-desc">Full scope development, permit research, managed bid process, independent bid review, contract execution, and escrow setup. You hand it to HomeGuard and we handle everything through the first day of work.</p>
+        <ul class="service-list">
+          <li>Complete scope development from scratch</li>
+          <li>Municipal permit research for your project and location</li>
+          <li>Full managed bid process with certified contractors</li>
+          <li>Bid review, recommendation, and contract execution</li>
+          <li>Escrow account setup and milestone schedule</li>
+          <li>Project monitoring activated from day one</li>
+        </ul>
+        <a href="#submit-project" class="service-btn">Get Started</a>
+      </div>
+
+    </div>
+
+    <div class="services-note">
+      <div class="services-note-icon">💡</div>
+      <p>Already have bids from other contractors? HomeGuard also offers a <strong>Contractor Bid Review</strong> — an independent analysis of any existing bids to verify they are fair, complete, and legally sound before you sign anything. <a href="#submit-project">Ask us about this service.</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="section-inner">
+    <div class="section-eyebrow">How We Compare</div>
+    <h2 class="section-title">Not a directory. A guarantee.</h2>
+    <p class="section-lead">Thumbtack, Angie's List, and Nextdoor will find you a contractor. HomeGuard is the only platform that stands behind the work.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th class="homeguard">HomeGuard</th>
+          <th class="others">Thumbtack / Angie's List / Nextdoor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Contractor vetting standard</td>
+          <td class="yes">6-week certified training + board review</td>
+          <td class="no">Self-reported — anyone can list</td>
+        </tr>
+        <tr>
+          <td>Lead distribution</td>
+          <td class="yes">One matched contractor per project</td>
+          <td class="no">Same lead sold to 5+ contractors simultaneously</td>
+        </tr>
+        <tr>
+          <td>Protective contract</td>
+          <td class="yes">Standard HomeGuard contract in place</td>
+          <td class="no">None — you're on your own</td>
+        </tr>
+        <tr>
+          <td>Dispute resolution</td>
+          <td class="yes">Written arbitration clause + Success Institute</td>
+          <td class="no">No formal process</td>
+        </tr>
+        <tr>
+          <td>Litigation backstop</td>
+          <td class="yes">Available at Platinum tier</td>
+          <td class="no">None</td>
+        </tr>
+        <tr>
+          <td>Milestone-based financing</td>
+          <td class="yes">Built into every project</td>
+          <td class="no">None — cash upfront common</td>
+        </tr>
+        <tr>
+          <td>Continuing education requirement</td>
+          <td class="yes">Annual — standards stay current</td>
+          <td class="no">None</td>
+        </tr>
+        <tr>
+          <td>Unbiased project estimate</td>
+          <td class="yes">Provided before contractor match</td>
+          <td class="no">None</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PROJECT PORTAL -->
+<section class="portal" id="submit-project">
+  <div class="section-inner">
+    <div class="section-eyebrow">Homeowner Project Portal</div>
+    <h2 class="section-title">Tell us about your project.</h2>
+    <p class="section-lead">Submit your project details and we will review it, provide an accurate rough estimate, and connect you with the right HomeGuard certified contractor — with a standard protective contract in place before any work begins.</p>
+
+    <div class="portal-form-wrap">
+      <div class="portal-form-title">Project Submission Form</div>
+      <div class="portal-form-sub">No commitment required. We will review and respond within 48 hours.</div>
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Your first name" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Your last name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(973) 000-0000">
+          </div>
+          <div class="form-group">
+            <label>Project Location (City, NJ)</label>
+            <input type="text" placeholder="e.g. Livingston, NJ" required>
+          </div>
+          <div class="form-group">
+            <label>Project Type</label>
+            <select required>
+              <option value="">Select project type</option>
+              <option>Kitchen Renovation</option>
+              <option>Bathroom Renovation</option>
+              <option>Basement Finishing</option>
+              <option>Roofing</option>
+              <option>Electrical</option>
+              <option>Plumbing</option>
+              <option>HVAC</option>
+              <option>Addition / New Construction</option>
+              <option>Exterior / Siding</option>
+              <option>Flooring</option>
+              <option>General Remodel</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated Budget Range</label>
+            <select>
+              <option value="">Select budget range</option>
+              <option>Under $10,000</option>
+              <option>$10,000 – $25,000</option>
+              <option>$25,000 – $50,000</option>
+              <option>$50,000 – $100,000</option>
+              <option>$100,000 – $250,000</option>
+              <option>Over $250,000</option>
+              <option>Not sure — need an estimate</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Desired Start Timeline</label>
+            <select>
+              <option value="">Select timeline</option>
+              <option>As soon as possible</option>
+              <option>Within 1 month</option>
+              <option>1 – 3 months</option>
+              <option>3 – 6 months</option>
+              <option>Planning for next year</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Project Description</label>
+            <textarea placeholder="Describe your project in as much detail as possible — scope of work, current condition, specific goals, any known issues..."></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" style="background: var(--navy); color: white; border: none; padding: 14px 36px; border-radius: 4px; font-family: var(--sans); font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s;">Submit My Project</button>
+          <span class="form-note">We review every submission personally and respond within 48 hours.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contractor Pricing</div>
+    <h2 class="section-title">Invest in your credential.</h2>
+    <p class="section-lead">The HomeGuard certification is not a one-time transaction. It is an ongoing membership in New Jersey's highest contractor standard.</p>
+
+    <div class="price-cards">
+      <div class="price-card">
+        <div class="price-card-label">Founding Cohort</div>
+        <h3>Academy Enrollment</h3>
+        <div class="price-amount">$3,000</div>
+        <div class="price-period">One-time — introductory rate, 20 spots only</div>
+        <ul class="price-list">
+          <li><span class="price-check">✓</span> 6-week HomeGuard Contractor Academy</li>
+          <li><span class="price-check">✓</span> Google Classroom, NotebookLM & StudyFetch access</li>
+          <li><span class="price-check">✓</span> HomeGuard Certified or Gold Seal issued</li>
+          <li><span class="price-check">✓</span> Standard rate $5,000 after founding cohort</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-homeowner" style="display:block; text-align:center; font-size:14px;">Apply Now — Founding Rate</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-card-label">Annual Renewal</div>
+        <h3>Gold Seal Membership</h3>
+        <div class="price-amount">$5,000</div>
+        <div class="price-period">Per year — includes CE credits</div>
+        <ul class="price-list">
+          <li><span class="price-check">✓</span> HomeGuard Gold Seal maintained</li>
+          <li><span class="price-check">✓</span> NJ DCA continuing education credits included</li>
+          <li><span class="price-check">✓</span> Network listing and lead access maintained</li>
+          <li><span class="price-check">✓</span> Advanced module access at preferred rates</li>
+          <li><span class="price-check">✓</span> Annual compliance review and recertification</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-contractor" style="display:block; text-align:center; font-size:14px;">Apply to the Academy</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card-label">Network Access</div>
+        <h3>Lead Pipeline Membership</h3>
+        <div class="price-amount">$200</div>
+        <div class="price-period">Per month + $75 per referred lead</div>
+        <ul class="price-list">
+          <li><span class="price-check">✓</span> Active listing in HomeGuard contractor directory</li>
+          <li><span class="price-check">✓</span> Access to pre-qualified homeowner project referrals</li>
+          <li><span class="price-check">✓</span> One matched lead per project — no bidding wars</li>
+          <li><span class="price-check">✓</span> Standard HomeGuard contract provided per project</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-homeowner" style="display:block; text-align:center; font-size:14px;">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Home<span>Guard</span> Contractor Academy</div>
+        <div class="footer-brand-sub">A program of Success Institute of New Jersey<br>501(c)(3) Nonprofit · EIN: 85-1642627<br>8 Academy Road, Caldwell, NJ 07006</div>
+        <div class="footer-seal">⭐ HomeGuard Gold Seal Program — Est. 2026</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Program</div>
+        <ul class="footer-links">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#certification">Certification Tiers</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="https://www.homeguardadvantage.com/about.html">About the Program</a></li>
+    <li><a href="https://www.homeguardadvantage.com/why-homeguard.html">Why HomeGuard</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:rick.alonso@tsinj.org">rick.alonso@tsinj.org</a></li>
+          <li><a href="tel:9736208793">973-620-8793</a></li>
+          <li><a href="#submit-project">Submit a Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Success Institute of New Jersey · HomeGuard Contractor Academy · All rights reserved</p>
+      <p><a href="https://tsinj.org/privacy-policy">Privacy Policy</a> · Serving Essex County, New Jersey</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = 'Submitted — we will be in touch within 48 hours.';
+  btn.style.background = '#2A7A3B';
+  btn.disabled = true;
+}
+</script>
+
+</body>
+</html>

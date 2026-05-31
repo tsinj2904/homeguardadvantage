@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Why HomeGuard exists — every frustration homeowners and contractors face with home improvement projects, and exactly how HomeGuard solves each one.">
+<title>Why HomeGuard | HomeGuard Contractor Academy | Success Institute of NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A6B;
+    --navy-dark: #0F2347;
+    --navy-light: #2A4F8A;
+    --gold: #B8972A;
+    --gold-light: #D4AF3A;
+    --gold-pale: #FDF3DC;
+    --cream: #FAFAF7;
+    --white: #FFFFFF;
+    --gray-100: #F4F4F0;
+    --gray-200: #E8E8E2;
+    --gray-400: #9B9B8E;
+    --gray-600: #5A5A52;
+    --gray-800: #2C2C28;
+    --red-pale: #FFF0F0;
+    --red: #A33030;
+    --green-pale: #F0FAF2;
+    --green: #2A7A3B;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--gray-800);
+    line-height: 1.7;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy-dark);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-seal {
+    width: 36px;
+    height: 36px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--navy-dark);
+    font-weight: 700;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--white);
+  }
+
+  .nav-name span { color: var(--gold-light); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy-dark) !important;
+    padding: 8px 20px !important;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    background: var(--navy);
+    padding: 12px 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .breadcrumb-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .breadcrumb a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover { color: var(--gold-light); }
+  .breadcrumb-sep { color: rgba(255,255,255,0.2); }
+  .breadcrumb-current { color: var(--gold-light); }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: var(--navy-dark);
+    padding: 72px 2rem 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -120px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(184,151,42,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .page-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(184,151,42,0.15);
+    border: 1px solid rgba(184,151,42,0.3);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  .page-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+
+  .page-hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .page-hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 600px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .hero-promise {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
+    max-width: 900px;
+  }
+
+  .hero-promise-item { }
+
+  .hero-promise-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .hero-promise-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+
+  /* INTRO */
+  .intro {
+    background: var(--white);
+    padding: 0 2rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .intro-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .intro-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3vw, 40px);
+    color: var(--navy-dark);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .intro-text p {
+    font-size: 17px;
+    color: var(--gray-600);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .intro-stat {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 24px 20px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .intro-stat-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--navy-dark);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .intro-stat-label {
+    font-size: 13px;
+    color: var(--gray-400);
+    line-height: 1.4;
+  }
+
+  /* FRICTION SECTIONS */
+  .friction-section {
+    padding: 0 2rem;
+  }
+
+  .friction-section.light { background: var(--cream); }
+  .friction-section.white { background: var(--white); }
+  .friction-section.navy { background: var(--navy-dark); }
+
+  .friction-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+
+  .friction-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .friction-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--navy-dark);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .friction-section.navy .friction-icon {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .friction-header-text h2 {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--navy-dark);
+    line-height: 1.2;
+  }
+
+  .friction-section.navy .friction-header-text h2 {
+    color: var(--white);
+  }
+
+  .friction-header-text p {
+    font-size: 15px;
+    color: var(--gray-400);
+    margin-top: 4px;
+  }
+
+  .friction-section.navy .friction-header-text p {
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* FRICTION CARDS */
+  .friction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .friction-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+
+  .friction-section.navy .friction-card {
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .friction-problem {
+    background: var(--red-pale);
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(163,48,48,0.1);
+  }
+
+  .friction-problem-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .friction-problem-label::before {
+    content: '✕';
+    font-size: 10px;
+  }
+
+  .friction-problem h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .friction-problem p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .friction-solution {
+    background: var(--green-pale);
+    padding: 20px 24px;
+  }
+
+  .friction-section.navy .friction-solution {
+    background: rgba(42,122,59,0.15);
+  }
+
+  .friction-solution-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .friction-solution-label::before {
+    content: '✓';
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .friction-solution h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 6px;
+  }
+
+  .friction-section.navy .friction-solution h4 {
+    color: var(--white);
+  }
+
+  .friction-solution p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .friction-section.navy .friction-solution p {
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* CONTRACTOR SECTION */
+  .contractor-friction {
+    background: var(--navy-dark);
+    padding: 0 2rem;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* PROMISE SECTION */
+  .promise {
+    background: var(--white);
+    padding: 0 2rem;
+  }
+
+  .promise-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+
+  .promise-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .promise h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--navy-dark);
+    line-height: 1.15;
+    margin-bottom: 48px;
+    max-width: 680px;
+  }
+
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .promise-card {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 28px 24px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .promise-card-num {
+    font-family: var(--serif);
+    font-size: 42px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+
+  .promise-card h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+  }
+
+  .promise-card p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: var(--gold);
+    padding: 56px 2rem;
+    text-align: center;
+  }
+
+  .cta-band h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .cta-band p {
+    font-size: 17px;
+    color: rgba(15,35,71,0.7);
+    margin-bottom: 32px;
+    font-weight: 300;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-dark {
+    background: var(--navy-dark);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-dark:hover { background: var(--navy); }
+
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--navy-dark);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    border: 2px solid var(--navy-dark);
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline-dark:hover { background: rgba(15,35,71,0.08); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    border-top: 2px solid var(--gold);
+    padding: 48px 2rem 32px;
+  }
+
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .footer-brand-name span { color: var(--gold-light); }
+
+  .footer-brand-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .footer-seal {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(184,151,42,0.12);
+    border: 1px solid rgba(184,151,42,0.25);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .footer-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .hero-promise { grid-template-columns: 1fr 1fr; }
+    .intro-inner { grid-template-columns: 1fr; }
+    .friction-grid { grid-template-columns: 1fr; }
+    .promise-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.homeguardadvantage.com" class="nav-brand">
+    <div class="nav-seal">HG</div>
+    <span class="nav-name">Home<span>Guard</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://www.homeguardadvantage.com/#homeowners">For Homeowners</a></li>
+    <li><a href="https://www.homeguardadvantage.com/#contractors">For Contractors</a></li>
+    <li><a href="https://www.homeguardadvantage.com/about.html">About</a></li>
+    <li><a href="https://www.homeguardadvantage.com/#submit-project" class="nav-cta">Submit Your Project</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="https://www.homeguardadvantage.com">HomeGuard</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Why HomeGuard</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">The Problem We Solve</div>
+    <h1>Every frustration you have ever had with a contractor.<br><em>We end them all.</em></h1>
+    <p class="page-hero-sub">HomeGuard was built because homeowners deserved better and good contractors deserved a standard that set them apart. Every friction point below is something HomeGuard solves — structurally, contractually, and permanently.</p>
+    <div class="hero-promise">
+      <div class="hero-promise-item">
+        <div class="hero-promise-num">10</div>
+        <div class="hero-promise-label">Homeowner friction points eliminated</div>
+      </div>
+      <div class="hero-promise-item">
+        <div class="hero-promise-num">5</div>
+        <div class="hero-promise-label">Contractor pain points addressed</div>
+      </div>
+      <div class="hero-promise-item">
+        <div class="hero-promise-num">1</div>
+        <div class="hero-promise-label">Standard that protects everyone</div>
+      </div>
+      <div class="hero-promise-item">
+        <div class="hero-promise-num">0</div>
+        <div class="hero-promise-label">Cash advances before work begins</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="intro-text">
+      <h2>The home improvement industry has a trust problem. HomeGuard is the fix.</h2>
+      <p>The New Jersey Division of Consumer Affairs receives thousands of complaints about home improvement contractors every single year. Home improvement grievances top the consumer complaint categories year after year — more than any other industry in the state.</p>
+      <p>Homeowners complain about shoddy workmanship, missed deadlines, and contractors who take deposits and never start or finish the work. The NJ Consumer Fraud Act exists specifically because this problem is that widespread. HomeGuard exists because a law alone is not enough — you need a standard before the problem starts.</p>
+    </div>
+    <div class="intro-stats">
+      <div class="intro-stat">
+        <div class="intro-stat-num">#1</div>
+        <div class="intro-stat-label">Home improvement complaints top NJ DCA consumer complaint categories every year — NJ Division of Consumer Affairs</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-num">1000s</div>
+        <div class="intro-stat-label">Of NJ homeowner complaints filed annually against contractors — NJ DCA Consumer Brief</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-num">$0</div>
+        <div class="intro-stat-label">Homeowner recourse on most NJ renovation platforms today — no contract, no escrow, no arbitration</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-num">100%</div>
+        <div class="intro-stat-label">Of HomeGuard projects protected by milestone escrow financing before work begins</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNICATION & RELIABILITY -->
+<section class="friction-section light" id="communication">
+  <div class="friction-inner">
+    <div class="friction-header">
+      <div class="friction-icon">📞</div>
+      <div class="friction-header-text">
+        <h2>Communication & Reliability</h2>
+        <p>The most common complaints — and the most preventable</p>
+      </div>
+    </div>
+    <div class="friction-grid">
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Ghosting</h3>
+          <p>Contractors failing to show up, answer calls, or respond to messages — leaving homeowners with a stalled project and no explanation.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>36-Hour Response Requirement</h4>
+          <p>Every Gold Seal contractor must respond to homeowner portal messages within 36 business hours. Two documented failures trigger a formal advisory. Abandonment of an active project triggers immediate suspension and replacement contractor activation.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Vague Timelines</h3>
+          <p>Missing project completion dates with no explanation, no updated schedule, and no accountability for delays.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Binary Milestone Phases</h4>
+          <p>Every HomeGuard project is broken into specific, binary phases — mobilization, rough-ins, finishes, final handover — each with a defined completion trigger. The timeline is written into the contract before work begins. Not a suggestion. A requirement.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Late Arrivals & No-Shows</h3>
+          <p>Arrival windows that force homeowners to miss work, rearrange their day, and wait for someone who may never come.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Daily Documentation Standard</h4>
+          <p>Gold Seal contractors are required to maintain daily photo and video progress logs uploaded to the HomeGuard portal. On-site activity is documented and visible. HomeGuard monitors activity throughout the project — not just at completion.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING & FINANCIAL -->
+<section class="friction-section white" id="pricing">
+  <div class="friction-inner">
+    <div class="friction-header">
+      <div class="friction-icon">💰</div>
+      <div class="friction-header-text">
+        <h2>Pricing & Financial Transparency</h2>
+        <p>Where most homeowners get hurt the most</p>
+      </div>
+    </div>
+    <div class="friction-grid">
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Hidden Fees</h3>
+          <p>Final bills that exceed the original estimate by thousands — surprise charges that appear only after the work is done and the contractor expects payment.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Unbiased Estimate Before Any Contractor Arrives</h4>
+          <p>HomeGuard provides an independent market-rate estimate before you ever speak to a contractor. You know what fair pricing looks like before anyone shows up at your door. The standard contract locks the scope and price before work begins.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Scope Creep</h3>
+          <p>Costs ballooning as workers discover "unexpected" issues — each one requiring expensive additional work that somehow nobody mentioned during the estimate.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Written Change Orders — No Exceptions</h4>
+          <p>Every scope modification requires a written, signed change order before execution. No verbal agreements. No surprise additions. Any change order executed without written approval is a certification violation — tracked, documented, and addressed through the monitoring system.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Markup Ambiguity</h3>
+          <p>No way for homeowners to know whether they are being charged fairly — with no baseline, no comparison, and no protection against inflated pricing hidden inside a single bid.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Independent Estimate Before Any Contractor Is Involved</h4>
+          <p>HomeGuard provides an unbiased, market-rate estimate before you ever speak to a contractor. You know what fair pricing looks like before anyone submits a bid. The managed bid process then brings three certified contractors to the same defined scope — the market itself reveals fair pricing without HomeGuard needing to dictate how contractors structure their numbers.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK QUALITY -->
+<section class="friction-section light" id="quality">
+  <div class="friction-inner">
+    <div class="friction-header">
+      <div class="friction-icon">🔨</div>
+      <div class="friction-header-text">
+        <h2>Work Quality & Professionalism</h2>
+        <p>The standard every homeowner deserves and every good contractor wants to be held to</p>
+      </div>
+    </div>
+    <div class="friction-grid">
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Poor Craftsmanship</h3>
+          <p>Substandard work that requires a second contractor to fix — costing the homeowner twice and leaving them with no recourse against the original contractor.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>One-Year Workmanship Guarantee</h4>
+          <p>Every HomeGuard certified project carries a one-year workmanship guarantee from the date of final completion sign-off. If the work fails within a year, the contractor remediates at no cost. If they refuse, HomeGuard activates the replacement contractor protocol and pursues cost recovery on your behalf.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Property Damage & Mess</h3>
+          <p>Workers leaving debris, damage, or dirt inside the home — with no documentation of what condition the property was in before they arrived.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Pre & Post Documentation Standard</h4>
+          <p>Daily photo and video logs document site condition throughout every project. Pre-project documentation establishes the baseline. Any damage is traceable. The HomeGuard arbitration system provides recourse — and the one-year guarantee covers workmanship failures discovered after completion.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Unlicensed Subcontractors</h3>
+          <p>Contractors bringing in unlicensed, uninsured subcontractors — exposing the homeowner to liability and leaving work that may not pass inspection.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Subcontractor License Verification Required</h4>
+          <p>Gold Seal contractors are responsible for every person they bring on site. Subcontractor license and insurance verification is an objective metric tracked continuously through the HomeGuard monitoring system. An unlicensed subcontractor on a HomeGuard project triggers an immediate monitoring flag.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST & SALES -->
+<section class="friction-section white" id="trust">
+  <div class="friction-inner">
+    <div class="friction-header">
+      <div class="friction-icon">🤝</div>
+      <div class="friction-header-text">
+        <h2>Trust & Sales Tactics</h2>
+        <p>The manipulation that erodes confidence in the entire industry</p>
+      </div>
+    </div>
+    <div class="friction-grid">
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Upselling & Fake Emergencies</h3>
+          <p>Technicians inventing problems or manufacturing urgency to sell expensive equipment or services the homeowner does not need.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Scope Defined Before Work Begins</h4>
+          <p>The HomeGuard contract defines the scope before any contractor steps on the property. Any mid-project recommendation to add services or replace equipment requires a written change order the homeowner reviews before approving. No verbal pressure. No manufactured emergencies. The contract is the protection.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>High-Pressure Closes</h3>
+          <p>Demanding immediate signatures on quotes before homeowners can compare bids or think through the decision — exploiting urgency to prevent due diligence.</p>
+        </div>
+        <div class="friction-solution">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4>Independent Estimate Before Any Contractor Conversation</h4>
+          <p>HomeGuard provides an unbiased market-rate estimate and manages the bid process before the homeowner ever talks to a contractor. They already know what fair pricing looks like. There is no pressure — because there is no information asymmetry. The homeowner is always the informed party.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTRACTOR SECTION -->
+<section class="contractor-friction">
+  <div class="friction-inner">
+    <div class="friction-header">
+      <div class="friction-icon">🏗️</div>
+      <div class="friction-header-text">
+        <h2 style="color: var(--white);">For Contractors — We End Your Frustrations Too.</h2>
+        <p>Good contractors suffer from these problems just as much as homeowners — just differently.</p>
+      </div>
+    </div>
+    <div class="friction-grid">
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Competing Against Unlicensed Contractors</h3>
+          <p>Losing bids to unlicensed competitors who undercut by not carrying insurance, pulling permits, or meeting any standard — while you do everything right.</p>
+        </div>
+        <div class="friction-solution" style="background: rgba(42,122,59,0.15);">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4 style="color: var(--white);">A Credential That Sets You Apart</h4>
+          <p style="color: rgba(255,255,255,0.7);">The HomeGuard Gold Seal tells every homeowner in NJ that you have been trained, vetted, and certified to a standard. You are not competing against unlicensed operators in our network. Every contractor in the pipeline meets the same rigorous standard.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Chasing Final Payments</h3>
+          <p>Homeowners withholding final payments, disputing invoices, or simply not paying — costing contractors thousands annually in bad debt and legal expenses.</p>
+        </div>
+        <div class="friction-solution" style="background: rgba(42,122,59,0.15);">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4 style="color: var(--white);">100% Escrow Protected Payments</h4>
+          <p style="color: rgba(255,255,255,0.7);">Every HomeGuard project uses milestone-based escrow financing. The homeowner's funds are secured before work begins. Each milestone release is triggered by verified completion. You are not chasing a check — you are releasing funds you have already earned.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Wasted Bids on Unserious Homeowners</h3>
+          <p>Spending hours driving to properties, writing estimates, and following up on homeowners who were never serious or whose budget doesn't match their project.</p>
+        </div>
+        <div class="friction-solution" style="background: rgba(42,122,59,0.15);">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4 style="color: var(--white);">Pre-Scoped, Pre-Budgeted, Exclusive Projects</h4>
+          <p style="color: rgba(255,255,255,0.7);">HomeGuard reviews every project submission, provides an independent estimate, and confirms the homeowner's budget before you ever see it. Every project you receive is pre-scoped, budget-verified, and exclusively yours. No competing bids. No tire-kickers.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>No Neutral Arbitrator in Disputes</h3>
+          <p>When a dispute arises, contractors face either an angry homeowner with no resolution process or an expensive legal battle — even when the contractor did everything right.</p>
+        </div>
+        <div class="friction-solution" style="background: rgba(42,122,59,0.15);">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4 style="color: var(--white);">Success Institute as Written Arbitrator</h4>
+          <p style="color: rgba(255,255,255,0.7);">Every HomeGuard contract names Success Institute as the binding arbitrator. You have a neutral, documented process for every dispute. Your milestone records, photo logs, and change orders are already filed. You are never alone in a dispute — and neither is the homeowner.</p>
+        </div>
+      </div>
+
+      <div class="friction-card">
+        <div class="friction-problem">
+          <div class="friction-problem-label">The Problem</div>
+          <h3>Reputation Damage From Industry Bad Actors</h3>
+          <p>Being lumped in with contractors who cut corners, disappear, and exploit homeowners — even when your own work is exceptional.</p>
+        </div>
+        <div class="friction-solution" style="background: rgba(42,122,59,0.15);">
+          <div class="friction-solution-label">The HomeGuard Solution</div>
+          <h4 style="color: var(--white);">A Seal That Means Something</h4>
+          <p style="color: rgba(255,255,255,0.7);">The HomeGuard Gold Seal is earned, not purchased. Six weeks of rigorous training, a peer board review, a background check, and an annual renewal that requires continuing education. When a homeowner sees the Gold Seal on your truck, they know the difference between you and everyone else.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE PROMISE -->
+<section class="promise">
+  <div class="promise-inner">
+    <div class="promise-eyebrow">The HomeGuard Standard</div>
+    <h2>Every problem above has the same root cause. No standard. HomeGuard is the standard.</h2>
+
+    <div class="promise-grid">
+      <div class="promise-card">
+        <div class="promise-card-num">01</div>
+        <h4>Before the project</h4>
+        <p>Certified contractor, unbiased estimate, standard protective contract, escrow protection in place before work begins.</p>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-num">02</div>
+        <h4>During the project</h4>
+        <p>Milestone monitoring, daily documentation, change order controls, HomeGuard oversight throughout construction.</p>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-num">03</div>
+        <h4>At completion</h4>
+        <p>Final walkthrough sign-off, one-year workmanship guarantee issued, all manufacturer warranties documented and filed.</p>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-num">04</div>
+        <h4>After completion</h4>
+        <p>Warranty records maintained in your HomeGuard portal for the life of your ownership and through every property transaction.</p>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-num">05</div>
+        <h4>If something goes wrong</h4>
+        <p>Intervention, replacement contractor if needed, arbitration, litigation backstop. We pursue recovery on your behalf. You never finish alone.</p>
+      </div>
+      <div class="promise-card">
+        <div class="promise-card-num">06</div>
+        <h4>When you sell your home</h4>
+        <p>Complete project history, active warranties, and guarantee certificates transfer to the new owner through the HomeGuard portal. A documented renovation history is a real estate asset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Ready to experience the difference?</h2>
+  <p>Submit your project and we will review it, provide an unbiased estimate, and connect you with a HomeGuard Gold Seal certified contractor — with a standard protective contract in place before any work begins.</p>
+  <div class="cta-btns">
+    <a href="https://www.homeguardadvantage.com/#submit-project" class="btn-dark">Submit Your Project</a>
+    <a href="https://www.homeguardadvantage.com/#contractors" class="btn-outline-dark">Earn Your Gold Seal</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Home<span>Guard</span> Contractor Academy</div>
+        <div class="footer-brand-sub">A program of Success Institute of New Jersey<br>501(c)(3) Nonprofit · EIN: 85-1642627<br>8 Academy Road, Caldwell, NJ 07006</div>
+        <div class="footer-seal">⭐ HomeGuard Gold Seal Program — Est. 2026</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Program</div>
+        <ul class="footer-links">
+          <li><a href="https://www.homeguardadvantage.com/#how-it-works">How It Works</a></li>
+          <li><a href="https://www.homeguardadvantage.com/#certification">Certification</a></li>
+          <li><a href="https://www.homeguardadvantage.com/#services">Our Services</a></li>
+          <li><a href="https://www.homeguardadvantage.com/about.html">About the Program</a></li>
+          <li><a href="https://www.homeguardadvantage.com/why-homeguard.html">Why HomeGuard</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:rick.alonso@tsinj.org">rick.alonso@tsinj.org</a></li>
+          <li><a href="tel:9736208793">973-620-8793</a></li>
+          <li><a href="https://www.homeguardadvantage.com/#submit-project">Submit a Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Success Institute of New Jersey · HomeGuard Contractor Academy · All rights reserved</p>
+      <p><a href="https://tsinj.org/privacy-policy">Privacy Policy</a> · Serving Essex County, New Jersey</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
