@@ -259,6 +259,7 @@
   .hero-stat {
     padding: 0 32px 0 0;
     border-right: 1px solid rgba(255,255,255,0.08);
+    min-width: 0;
   }
 
   .hero-stat:last-child {
@@ -273,6 +274,9 @@
     color: var(--gold-light);
     line-height: 1;
     margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .hero-stat-label {
@@ -1313,7 +1317,7 @@
     .hamburger { display: flex; }
     .nav-links { display: none; }
 
-    .hero-stat-num { font-size: 28px; }
+    .hero-stat-num { font-size: 24px; }
     .hero-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 16px; }
     .hero h1 { font-size: 32px; }
     .hero-sub { font-size: 16px; }
@@ -1360,8 +1364,9 @@
     /* Fix tabs */
     .tabs { overflow-x: auto; white-space: nowrap; }
 
-    /* Hide step connectors */
-    .step-connector { display: none; }
+    .hero-stat { padding: 0 8px 0 0 !important; border-right: none !important; }
+    .hero-stat:nth-child(odd) { padding-right: 8px !important; }
+    .hero-stat:nth-child(even) { padding-left: 8px !important; }
 
     /* Fix audience CTA box */
     .audience-cta-box { margin-top: 0; }
@@ -1917,6 +1922,14 @@ function closeMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.classList.remove('open');
 }
+
+// Close menu when user scrolls
+window.addEventListener('scroll', function() {
+  const menu = document.getElementById('mobileMenu');
+  if (menu && menu.classList.contains('open')) {
+    menu.classList.remove('open');
+  }
+});
 
 function switchTab(tabId, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
