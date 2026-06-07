@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HomeGuard Advantage FAQ — Everything homeowners, Gold Seal contractors, and Premier Seal providers need to know. Certified. Monitored. Backed.">
+<title>FAQ | HomeGuard Advantage | Success Institute of NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A6B;
+    --navy-dark: #0F2347;
+    --navy-light: #2A4F8A;
+    --gold: #B8972A;
+    --gold-light: #D4AF3A;
+    --gold-pale: #FDF3DC;
+    --gold-mid: #E8C85A;
+    --cream: #FAFAF7;
+    --white: #FFFFFF;
+    --gray-100: #F4F4F0;
+    --gray-200: #E8E8E2;
+    --gray-400: #9A9A8E;
+    --gray-600: #5A5A52;
+    --gray-800: #2A2A24;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--gray-800);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: var(--navy-dark);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-seal {
+    width: 36px;
+    height: 36px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy-dark);
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--white);
+    letter-spacing: -0.3px;
+  }
+
+  .nav-name span { color: var(--gold-light); }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy-dark) !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--navy-dark);
+    padding: 24px 48px;
+    gap: 20px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 12px 48px;
+  }
+
+  .breadcrumb-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .breadcrumb a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb-current { color: var(--gray-600); }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: var(--navy-dark);
+    position: relative;
+    overflow: hidden;
+    padding: 72px 48px 80px;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,151,42,0.15);
+    pointer-events: none;
+  }
+
+  .page-hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(184,151,42,0.4);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .page-eyebrow::before {
+    content: '•';
+    color: var(--gold);
+  }
+
+  .page-hero h1 {
+    font-family: var(--serif);
+    font-size: 48px;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .page-hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .page-hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* FAQ CONTENT */
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 48px;
+  }
+
+  /* AUDIENCE TABS */
+  .faq-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 56px;
+    border-bottom: 2px solid var(--gray-200);
+  }
+
+  .faq-tab {
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-400);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: var(--sans);
+  }
+
+  .faq-tab:hover { color: var(--navy); }
+
+  .faq-tab.active {
+    color: var(--navy-dark);
+    border-bottom-color: var(--gold);
+  }
+
+  .faq-panel { display: none; }
+  .faq-panel.active { display: block; }
+
+  /* SECTION LABEL */
+  .faq-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    margin-top: 48px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .faq-section-label:first-child { margin-top: 0; }
+
+  /* FAQ ITEMS */
+  .faq-item {
+    border-bottom: 1px solid var(--gray-200);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 24px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--sans);
+  }
+
+  .faq-question-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--gold-pale);
+    border: 1px solid rgba(184,151,42,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    transition: all 0.2s;
+    margin-top: 2px;
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--gold);
+    color: var(--white);
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 600px;
+  }
+
+  .faq-answer-inner {
+    padding: 0 0 28px 0;
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.75;
+  }
+
+  .faq-answer-inner strong {
+    color: var(--navy-dark);
+    font-weight: 600;
+  }
+
+  .faq-answer-inner a {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .faq-answer-inner a:hover { text-decoration: underline; }
+
+  /* CALLOUT BOX */
+  .faq-callout {
+    background: var(--navy-dark);
+    border-radius: 8px;
+    padding: 32px 40px;
+    margin: 56px 0;
+    text-align: center;
+  }
+
+  .faq-callout h3 {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+
+  .faq-callout p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  .faq-callout-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--navy-dark);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-gold:hover { background: var(--gold-light); }
+
+  .btn-outline-white {
+    border: 2px solid rgba(255,255,255,0.4);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .btn-outline-white:hover { border-color: var(--white); }
+
+  /* STILL HAVE QUESTIONS */
+  .still-questions {
+    background: var(--gold-pale);
+    border: 1px solid rgba(184,151,42,0.2);
+    border-radius: 8px;
+    padding: 32px 40px;
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .still-questions h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .still-questions p {
+    font-size: 15px;
+    color: var(--gray-600);
+  }
+
+  .still-questions a {
+    background: var(--navy-dark);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    padding: 56px 48px 32px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .footer-brand-name span { color: var(--gold-light); }
+
+  .footer-brand-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .footer-seal {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu { padding: 24px; }
+    .breadcrumb { padding: 12px 24px; }
+    .page-hero { padding: 48px 24px 56px; }
+    .page-hero h1 { font-size: 32px; }
+    .page-hero-sub { font-size: 16px; }
+    .faq-container { padding: 48px 24px; }
+    .faq-tabs { overflow-x: auto; }
+    .faq-tab { padding: 12px 20px; font-size: 14px; white-space: nowrap; }
+    .faq-callout { padding: 24px; }
+    .still-questions { padding: 24px; flex-direction: column; }
+    footer { padding: 40px 24px 24px; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.homeguardadvantage.com/index.html" class="nav-brand">
+    <div class="nav-seal">HG</div>
+    <span class="nav-name">Home<span>Guard</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://www.homeguardadvantage.com/index.html#homeowners">For Homeowners</a></li>
+    <li><a href="https://www.homeguardadvantage.com/index.html#contractors">For Contractors</a></li>
+    <li><a href="https://www.homeguardadvantage.com/index.html#premier-seal">Premier Seal</a></li>
+    <li><a href="https://www.homeguardadvantage.com/about.html">About</a></li>
+    <li><a href="https://www.homeguardadvantage.com/why-homeguard.html">Why HomeGuard</a></li>
+    <li><a href="faq.html" style="color: var(--gold-light);">FAQ</a></li>
+    <li><a href="https://www.homeguardadvantage.com/index.html#submit-project" class="nav-cta">Submit Your Project</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://www.homeguardadvantage.com/index.html#homeowners" onclick="closeMenu()">For Homeowners</a>
+  <a href="https://www.homeguardadvantage.com/index.html#contractors" onclick="closeMenu()">For Contractors</a>
+  <a href="https://www.homeguardadvantage.com/index.html#premier-seal" onclick="closeMenu()">Premier Seal</a>
+  <a href="https://www.homeguardadvantage.com/about.html" onclick="closeMenu()">About</a>
+  <a href="https://www.homeguardadvantage.com/why-homeguard.html" onclick="closeMenu()">Why HomeGuard</a>
+  <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  <a href="https://www.homeguardadvantage.com/index.html#submit-project" onclick="closeMenu()">Submit Your Project</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="https://www.homeguardadvantage.com/index.html">HomeGuard</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Frequently Asked Questions</span>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">Questions and Answers</div>
+    <h1>Everything you need to know<br>about <em>HomeGuard.</em></h1>
+    <p class="page-hero-sub">Answers for homeowners, Gold Seal contractors, and Premier Seal providers. If your question is not here — contact us directly at info@homeguardadvantage.com.</p>
+  </div>
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-container">
+
+  <!-- TABS -->
+  <div class="faq-tabs">
+    <button class="faq-tab active" onclick="showTab('homeowners', this)">For Homeowners</button>
+    <button class="faq-tab" onclick="showTab('contractors', this)">For Contractors</button>
+    <button class="faq-tab" onclick="showTab('providers', this)">For Premier Seal Providers</button>
+  </div>
+
+  <!-- HOMEOWNER PANEL -->
+  <div class="faq-panel active" id="panel-homeowners">
+
+    <div class="faq-section-label">Understanding HomeGuard</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How is HomeGuard different from Angie's List or Thumbtack?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Angie's List and Thumbtack are advertising platforms. Contractors pay for placement and leads — which means their financial interest is in having as many contractors on the platform as possible, not in having only the best ones. <strong>HomeGuard is a certification program.</strong> Every Gold Seal contractor earned their credential through six weeks of rigorous business training and an objective final exam — it cannot be purchased. We also monitor ongoing performance and stand behind every project with a standard contract, milestone financing, and a written arbitration backstop. <strong>Certified. Monitored. Backed.</strong> No other platform does all three.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What does "Certified. Monitored. Backed." mean?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          These are the three things no other home services platform offers simultaneously. <strong>Certified</strong> — every provider earned their credential through a documented process that cannot be purchased. <strong>Monitored</strong> — the credential follows the work. A three-tier performance system tracks every provider after certification and the Gold Seal can be revoked if a contractor stops meeting the standard. <strong>Backed</strong> — we stand behind every job. Standard protective contract, milestone financing, written arbitration backstop, and rescue contractor protocol if someone abandons your project. You are never left alone.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What does the Gold Seal mean for me as a homeowner?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          When you hire a HomeGuard Gold Seal certified contractor you know three things instantly. First — they earned a credential through a documented six-week training program and objective exam that cannot be purchased. Second — their performance is monitored after certification and the credential can be revoked if they stop meeting the standard. Third — your project is backed by a standard protective contract, milestone financing, and HomeGuard's arbitration backstop. You are never left alone with a problem.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What does the Premier Seal mean?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          HomeGuard Premier Seal covers every home service category beyond licensed renovation contracting — landscaping, cleaning, tree removal, restoration, pool maintenance, fencing, outdoor kitchens, security cameras, senior proofing, baby proofing, and more. Every Premier Seal provider is background checked, insured with minimum $1M in general liability, business licensed, reference-verified, and trained in HomeGuard's ethics and customer service standards. Same trust promise as the Gold Seal — different service category.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">Is HomeGuard like Consumer Reports for home services?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          The parallel is accurate in one important way — the credential cannot be purchased, only earned. Just as Consumer Reports built its credibility on independent evaluation with no advertiser influence, HomeGuard's Gold Seal and Premier Seal are earned through a documented process that no amount of money can shortcut. HomeGuard actually goes further — Consumer Reports evaluates products after they exist. HomeGuard certifies providers before they touch your home, monitors their ongoing performance, and stands behind every job if something goes wrong. Think of it as what Consumer Reports would look like if it existed for home services — with an accountability backstop that Consumer Reports never offered.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section-label">Using HomeGuard</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How do I submit a project?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Visit <a href="https://www.homeguardadvantage.com/index.html#submit-project">homeguardadvantage.com</a> and complete the project submission form. Select your project type, describe the scope, indicate your budget range and timeline, and submit. HomeGuard reviews every submission within 24 hours, provides an unbiased estimate of realistic NJ market pricing, and matches you with a certified provider. Standard contract in place before anyone shows up. One call, one click, and it's done.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How much does it cost to use HomeGuard as a homeowner?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Three service tiers: <strong>Project Readiness Consultation — $150</strong> — a 30-minute session providing an unbiased estimate of your project's realistic cost in your NJ county before any contractor is involved. <strong>Managed Bid Service — $350</strong> — HomeGuard manages the full bid process on your behalf. <strong>Premium Project Launch — $600</strong> — full project management from estimate through contractor selection. Once matched, your costs are the contracted project price managed through the HomeGuard milestone payment system.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">Do I pay HomeGuard or the contractor directly?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          You pay through the HomeGuard milestone system. Funds are held and released at verified project milestones — not at the contractor's request. HomeGuard manages the payment flow. The contractor is paid promptly for completed work. You are protected against funding work that has not been done. You never pay more than one milestone ahead of verified completed work.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">Can I use HomeGuard for small jobs — landscaping, cleaning, pool service?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Yes. HomeGuard covers every home service category through the Premier Seal provider network. A single gutter cleaning, recurring lawn maintenance, a one-time deep clean, pool maintenance, tree trimming, snow removal — all eligible through the portal. One call, one click, and it's done.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">Is HomeGuard available in my town?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          HomeGuard serves New Jersey statewide. Submit your project at <a href="https://www.homeguardadvantage.com/index.html#submit-project">homeguardadvantage.com</a> and we will confirm availability in your area.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section-label">Protection and Recourse</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What happens if something goes wrong with my project?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          HomeGuard has a three-part response. <strong>Step in immediately</strong> — you are not left to navigate a dispute alone. HomeGuard contacts the contractor and facilitates resolution. <strong>Protect your funds</strong> — milestone financing means money is not released for work that has not been completed and verified. <strong>Rescue contractor protocol</strong> — if a contractor abandons your project HomeGuard assigns a certified replacement contractor to complete the work. We pursue recovery from the original contractor on your behalf.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What is the arbitration backstop?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Every HomeGuard project includes a written arbitration clause designating Success Institute of New Jersey as the neutral arbitrator in any dispute. This means if you and your contractor cannot resolve a disagreement you have a documented, binding process for resolution without going to court. The arbitration backstop is included in every HomeGuard standard contract at no additional cost to you.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How does milestone financing work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          The project is divided into defined phases agreed upon in the contract before work begins — framing, rough electrical, rough plumbing, drywall, finishes, completion. When each phase is completed and verified, payment for that phase is released. You never fund more than one phase ahead of completed work. A contractor cannot receive payment for phase three until phase two is verified complete. This protects your money at every stage of the project.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTRACTOR PANEL -->
+  <div class="faq-panel" id="panel-contractors">
+
+    <div class="faq-section-label">The Gold Seal Academy</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">Who qualifies for the Gold Seal Academy?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Licensed NJ home improvement contractors — general contractors, electricians, plumbers, HVAC technicians — who are actively operating in NJ and want to elevate their business standards, distinguish themselves from competitors, and access a pre-qualified homeowner project pipeline. You must hold a current NJ Home Improvement Contractor registration to apply.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How long does the Gold Seal certification take?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Six weeks. The Master Builder Academy is delivered through Google Classroom — self-paced within the weekly module schedule. Each of the six modules ends with a competency quiz at 80% pass threshold with one retake per module. The Module 5 business plan is reviewed and approved by Dr. Alonso before you sit the final exam. The final comprehensive exam is timed and open note — 90% or above earns the Gold Seal, 80%–89% earns HomeGuard Certified. Background check and financial verification are completed before any credential is issued.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What is the difference between HomeGuard Certified and Gold Seal?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Both tiers require the same six-week Academy and the same background check and financial verification. The difference is performance on the final comprehensive exam. <strong>Gold Seal — 90% or above</strong> — the distinction tier. Priority placement in the homeowner portal, first right of refusal on incoming projects, Gold Seal for truck and marketing materials. <strong>HomeGuard Certified — 80% to 89%</strong> — the entry tier. Standard portal listing and lead access. Both are earned — neither is purchased.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What does the Gold Seal credential do for my business?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          The Gold Seal tells every homeowner who sees it that you earned a credential through a process that cannot be purchased. You get priority placement in the HomeGuard homeowner portal, access to pre-qualified project referrals, a standard contract framework that protects you legally, and the Gold Seal for your truck, website, and marketing materials. More importantly — the Gold Seal separates you from every other contractor competing for the same clients. It is the only credential in NJ home services that cannot be bought. Only earned.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What does the founding cohort rate mean?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          The founding cohort is the first 20 licensed NJ contractors to enroll. Tuition is <strong>$3,000</strong> — the founding cohort rate only. After 20 spots fill the standard rate is <strong>$5,000</strong>. Founding cohort members also have their lead referral fees waived on their first three completed HomeGuard projects. Apply at <a href="https://www.homeguardadvantage.com/index.html#submit-project">homeguardadvantage.com</a> before the cohort fills.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section-label">Leads and Network</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How do I get leads through HomeGuard?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Once certified you receive an active listing in the HomeGuard homeowner portal. When a homeowner submits a project matching your trade and geography, HomeGuard notifies you. Lead fees are tiered by project size — small projects $150, medium $300, large $500. Founding cohort members have their first three project lead fees waived. Gold Seal contractors receive priority placement — their profiles surface first in homeowner matches.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What is the annual renewal requirement?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Gold Seal and HomeGuard Certified contractors renew annually at $5,000. Renewal includes continuing education credits pending NJ Board of Home Improvement approval, performance record review, background check refresh, and financial standing confirmation. The monthly network fee is $200 — which maintains your active portal listing and lead access year-round.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What happens if a homeowner complains about my work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          HomeGuard has a three-tier response system. <strong>Advisory</strong> — HomeGuard contacts you with the complaint and gives you an opportunity to resolve it directly. <strong>Intervention</strong> — HomeGuard facilitates a formal resolution process including the written arbitration backstop with Success Institute as neutral arbitrator. <strong>Suspension</strong> — if the issue is not resolved or represents a significant standard violation, your credential is suspended pending review. The goal is always resolution — not punishment. Quality contractors benefit from a platform that holds everyone to the same standard.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PREMIER SEAL PANEL -->
+  <div class="faq-panel" id="panel-providers">
+
+    <div class="faq-section-label">The Premier Seal Program</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What types of businesses qualify for the Premier Seal?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Any established NJ home service business outside of licensed renovation contracting. This includes landscaping, lawn care, cleaning services, tree removal and trimming, pool maintenance and installation, snow removal, pest control, restoration and remediation, fencing, outdoor kitchens, security camera installation, smart home installation, senior proofing, baby proofing, and every other home service category homeowners need. If you serve homeowners and you are not a licensed general contractor or licensed trade — the Premier Seal is for you.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What are the vetting requirements for Premier Seal?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Six requirements — all verified before listing: <strong>Valid business license</strong> for your specific service category. <strong>General liability insurance</strong> — minimum $1,000,000 per occurrence, certificate on file with HomeGuard. <strong>Background check</strong> — owner and all employees who enter homeowner properties. <strong>Three verifiable customer references</strong> — contacted and confirmed by HomeGuard. <strong>Three-module training</strong> — ethics, business standards, and customer service — delivered through Google Classroom. <strong>HomeGuard Standards Agreement</strong> — signed commitment to HomeGuard conduct and quality standards.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How do I apply for the Premier Seal?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Visit <a href="https://www.homeguardadvantage.com/index.html#premier-seal">homeguardadvantage.com</a> and submit a Premier Seal provider application. You will need your business license, proof of general liability insurance, three verifiable customer references, and owner background check authorization. Once your application is reviewed and verified you complete the three-module HomeGuard training program and sign the HomeGuard Standards Agreement. Annual listing fee is $500–$1,000 depending on service category plus $100 per month portal access fee.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What does the Premier Seal credential do for my business?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          The Premier Seal tells every homeowner who sees it that you have been vetted, insured, background checked, and trained to a standard that no directory or review platform requires. You get an active listing in the HomeGuard homeowner portal with exclusive pre-qualified leads — not shared with five competitors simultaneously. You can display the Premier Seal on your truck, website, and marketing materials. And you stand apart from every unvetted operator in your market who is competing for the same clients without meeting any standard.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">What is the annual re-verification requirement?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Every Premier Seal provider re-verifies annually to maintain their listing. Re-verification confirms that your business license remains current, your insurance has not lapsed, and your standing with HomeGuard remains in good order. The annual re-verification fee is $250. This is what separates the Premier Seal from a one-time background check that any directory offers — the standard is maintained year over year, not just at initial application.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span class="faq-question-text">How does the lead system work for Premier Seal providers?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          When a homeowner submits a service request matching your category and geography, HomeGuard notifies you. Lead fees are tiered by job size — small jobs $25, medium $50, large $75. Leads are exclusive — not sent to multiple competing providers simultaneously. The homeowner specifically chose a Premier Seal vetted provider over an unvetted one before the match is made. These are pre-qualified leads, not cold inquiries.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="faq-callout">
+    <h3>Ready to get started?</h3>
+    <p>Submit your home project, apply for Gold Seal certification, or join the Premier Seal provider network. One call, one click, and it's done.</p>
+    <div class="faq-callout-btns">
+      <a href="https://www.homeguardadvantage.com/index.html#submit-project" class="btn-gold">Submit Your Project</a>
+      <a href="https://www.homeguardadvantage.com/index.html#contractors" class="btn-outline-white">Earn Your Gold Seal</a>
+      <a href="https://www.homeguardadvantage.com/index.html#premier-seal" class="btn-outline-white">Apply for Premier Seal</a>
+    </div>
+  </div>
+
+  <!-- STILL HAVE QUESTIONS -->
+  <div class="still-questions">
+    <div>
+      <h3>Still have a question?</h3>
+      <p>Contact Dr. Ricardo Alonso directly. Every inquiry is personally reviewed and answered within 24 hours.</p>
+    </div>
+    <a href="mailto:info@homeguardadvantage.com">info@homeguardadvantage.com</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Home<span>Guard</span> Advantage</div>
+        <div class="footer-brand-sub">A program of Success Institute of New Jersey<br>501(c)(3) Nonprofit · EIN: 85-1642627<br>8 Academy Road, Caldwell, NJ 07006</div>
+        <div class="footer-seal">⭐ Candid Gold Seal of Transparency · Certified. Monitored. Backed.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Pages</div>
+        <ul class="footer-links">
+          <li><a href="https://www.homeguardadvantage.com/index.html">Home</a></li>
+          <li><a href="https://www.homeguardadvantage.com/about.html">About</a></li>
+          <li><a href="https://www.homeguardadvantage.com/why-homeguard.html">Why HomeGuard</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:info@homeguardadvantage.com">info@homeguardadvantage.com</a></li>
+          <li><a href="tel:9736208793">973-620-8793</a></li>
+          <li><a href="https://www.homeguardadvantage.com/index.html#submit-project">Submit a Project</a></li>
+          <li><a href="https://tsinj.org">tsinj.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Success Institute of New Jersey · HomeGuard Advantage · All rights reserved</p>
+      <p>Serving New Jersey Statewide</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+function showTab(tab, btn) {
+  // Hide all panels
+  document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+  // Show selected
+  document.getElementById('panel-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // Open clicked if it was closed
+  if (!isOpen) item.classList.add('open');
+}
+
+// Open first item in each panel by default
+document.querySelectorAll('.faq-panel').forEach(panel => {
+  const first = panel.querySelector('.faq-item');
+  if (first) first.classList.add('open');
+});
+</script>
+
+</body>
+</html>
