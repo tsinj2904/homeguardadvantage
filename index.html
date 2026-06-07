@@ -1049,44 +1049,119 @@
   .compare-table {
     width: 100%;
     margin-top: 24px;
-    border-collapse: collapse;
-    border-radius: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--gray-200);
+    box-shadow: 0 2px 20px rgba(15,35,71,0.10);
+  }
+
+  .compare-table thead tr {
+    background: transparent;
   }
 
   .compare-table th {
-    padding: 16px 20px;
-    font-size: 13px;
-    font-weight: 600;
+    padding: 20px 28px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 0.5px;
     text-align: left;
-    border-right: 2px solid rgba(255,255,255,0.15);
   }
 
-  .compare-table th:last-child { border-right: none; }
-  .compare-table th:first-child { background: var(--gray-100); color: var(--gray-600); border-right: 2px solid var(--gray-200); }
-  .compare-table th.homeguard { background: var(--navy-dark); color: var(--gold-light); border-right: 3px solid var(--gold); }
-  .compare-table th.others { background: var(--gray-200); color: var(--gray-600); }
+  .compare-table th:first-child {
+    background: var(--gray-100);
+    color: var(--gray-600);
+    width: 28%;
+    border-right: 2px solid var(--gray-200);
+  }
+
+  .compare-table th.homeguard {
+    background: var(--navy-dark);
+    color: var(--gold-light);
+    width: 36%;
+    border-right: 3px solid var(--gold);
+    font-size: 15px;
+  }
+
+  .compare-table th.others {
+    background: var(--gray-200);
+    color: var(--gray-600);
+    width: 36%;
+  }
 
   .compare-table td {
-    padding: 14px 20px;
-    font-size: 14px;
+    padding: 18px 28px;
+    font-size: 15px;
     border-bottom: 1px solid var(--gray-200);
-    border-right: 1px solid var(--gray-200);
-    vertical-align: top;
+    vertical-align: middle;
+    line-height: 1.5;
   }
 
-  .compare-table td:last-child { border-right: none; }
   .compare-table tr:last-child td { border-bottom: none; }
-  .compare-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
-  .compare-table tr:nth-child(even) td.yes { background: rgba(42,122,59,0.05); }
-  .compare-table tr:nth-child(even) td.no { background: rgba(163,48,48,0.03); }
 
-  .compare-table td:first-child { color: var(--gray-600); font-weight: 500; border-right: 2px solid var(--gray-200); }
-  .compare-table td:nth-child(2) { border-right: 3px solid var(--gold); }
-  .compare-table td.yes { color: #2A7A3B; font-weight: 600; }
-  .compare-table td.no { color: #A33030; }
+  .compare-table td:first-child {
+    color: var(--navy-dark);
+    font-weight: 600;
+    font-size: 14px;
+    background: var(--gray-100);
+    border-right: 2px solid var(--gray-200);
+  }
+
+  .compare-table td:nth-child(2) {
+    border-right: 3px solid var(--gold);
+    background: rgba(15,35,71,0.02);
+  }
+
+  .compare-table tr:nth-child(even) td:first-child { background: var(--gray-100); }
+  .compare-table tr:nth-child(even) td:nth-child(2) { background: rgba(15,35,71,0.04); }
+  .compare-table tr:nth-child(even) td:nth-child(3) { background: rgba(0,0,0,0.02); }
+
+  .compare-table td.yes {
+    color: #1E6B35;
+    font-weight: 600;
+  }
+
+  .compare-table td.yes::before {
+    content: "✓ ";
+    color: #2A7A3B;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .compare-table td.no {
+    color: #8B3030;
+  }
+
+  .compare-table td.no::before {
+    content: "✗ ";
+    color: #A33030;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .compare-section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 56px;
+    margin-bottom: 16px;
+  }
+
+  .compare-section-label-badge {
+    background: var(--navy-dark);
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 4px;
+  }
+
+  .compare-section-label-sub {
+    font-size: 13px;
+    color: var(--gray-400);
+  }
 
   /* PRICING */
   .pricing { background: var(--white); border-bottom: 2px solid var(--gold); }
@@ -1455,15 +1530,25 @@
   <div class="difference-inner">
     <span class="difference-label">The HomeGuard Standard</span>
     <div class="difference-items">
-      <span class="difference-item">Gold Seal Certified Contractors</span>
-      <span class="difference-item">HomeGuard Premier Seal</span>
-      <span class="difference-item">Every Home Service Category</span>
-      <span class="difference-item">One Portal. One Standard.</span>
-      <span class="difference-item">Real-Time Scheduling</span>
-      <span class="difference-item">Fully Protected</span>
+      <span class="difference-item">Certified</span>
+      <span class="difference-item">Monitored</span>
+      <span class="difference-item">Backed</span>
+      <span class="difference-item">Gold Seal Contractors</span>
+      <span class="difference-item">Premier Seal Providers</span>
+      <span class="difference-item">Every Home Service</span>
+      <span class="difference-item">We Stand Behind Every Job</span>
     </div>
   </div>
 </div>
+
+<!-- SCROLL TO TOP BUTTON -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top" style="display:none; position:fixed; bottom:32px; right:32px; z-index:999; width:52px; height:52px; background:var(--navy-dark); color:var(--gold-light); border:2px solid var(--gold); border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(15,35,71,0.3); align-items:center; justify-content:center; font-weight:700;">↑</button>
+<script>
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('scrollTopBtn');
+  btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+});
+</script>
 
 <!-- AUDIENCE TABS -->
 <section style="background: var(--cream); padding: 80px 48px;" id="homeowners">
@@ -1587,6 +1672,35 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
         <div>
 
+          <!-- FOUR HIGHLIGHT CARDS -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px;">
+
+            <div style="background: var(--navy-dark); border-radius: 8px; padding: 20px; border-left: 4px solid var(--gold);">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Level Playing Field</div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.3;">No more competing against Chuck in a truck</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5;">Only licensed, insured, certified contractors in the network. Every competitor plays by the same rules you do.</div>
+            </div>
+
+            <div style="background: var(--navy-dark); border-radius: 8px; padding: 20px; border-left: 4px solid var(--gold);">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Get Paid First</div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.3;">Funds in escrow before you start</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5;">Milestone financing means money is held and released as verified work is done. No more chasing payments.</div>
+            </div>
+
+            <div style="background: var(--navy-dark); border-radius: 8px; padding: 20px; border-left: 4px solid var(--gold);">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Exclusive Leads</div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.3;">One contractor per project. No bidding wars.</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5;">Pre-scoped, budget-verified, ready to sign. You are not competing against five other guys for the same job.</div>
+            </div>
+
+            <div style="background: var(--navy-dark); border-radius: 8px; padding: 20px; border-left: 4px solid var(--gold);">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Your Credential</div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.3;">Cannot be purchased. Only earned.</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5;">Six weeks of training, an objective exam, background check. The Gold Seal on your truck tells homeowners exactly who you are.</div>
+            </div>
+
+          </div>
+
           <div style="margin-bottom: 32px;">
             <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">The Gold Seal Academy — Six Weeks</div>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
@@ -1647,29 +1761,35 @@
             </ul>
           </div>
 
-        </div>
-
-        <div>
-          <div style="background: var(--navy-dark); border-radius: 8px; padding: 40px; position: sticky; top: 90px;">
-            <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Founding Cohort — 20 Spots</div>
-            <h3 style="font-family: var(--serif); font-size: 26px; color: var(--white); margin-bottom: 16px; font-weight: 400;">The credential that<br><em style="color: var(--gold-light);">cannot be purchased.</em></h3>
-            <div style="margin-bottom: 24px;">
-              <div style="font-size: 42px; font-weight: 900; color: var(--gold-light); font-family: var(--serif); line-height: 1;">$3,000</div>
-              <div style="font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: line-through; margin-top: 4px;">Standard rate $5,000 after cohort fills</div>
+          <div style="margin-top: 40px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">Certification Tiers — Both Earned, Not Purchased</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div style="border: 1px solid var(--gray-200); border-radius: 8px; padding: 24px; background: var(--white);">
+                <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 8px;">Entry Tier</div>
+                <div style="font-size: 18px; font-weight: 700; color: var(--navy-dark); margin-bottom: 12px;">HomeGuard Certified</div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--navy-dark); font-family: var(--serif); margin-bottom: 4px;">$3,000</div>
+                <div style="font-size: 12px; color: var(--gray-400); text-decoration: line-through; margin-bottom: 4px;">Standard rate $5,000</div>
+                <div style="font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 16px;">Founding cohort — 20 spots only</div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 6px;">✓ Final exam score 80–89%</div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 6px;">✓ Background and financial verified</div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 6px;">✓ Standard portal listing</div>
+                <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 16px;">✓ Annual renewal at $5,000</div>
+                <a href="#submit-project" style="display: block; background: var(--navy-dark); color: var(--white); padding: 12px; border-radius: 4px; font-size: 14px; font-weight: 600; text-align: center; text-decoration: none;">Apply to the Academy</a>
+              </div>
+              <div style="border: 2px solid var(--gold); border-radius: 8px; padding: 24px; background: var(--navy-dark);">
+                <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">⭐ Distinction Tier</div>
+                <div style="font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px;">HomeGuard Gold Seal</div>
+                <div style="font-size: 28px; font-weight: 900; color: var(--gold-light); font-family: var(--serif); margin-bottom: 4px;">Gold Seal</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 16px;">Awarded upon final exam score of 90%+</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 6px;">✓ Final exam score 90% or above</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 6px;">✓ Priority portal placement</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 6px;">✓ Gold Seal for truck and website</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 16px;">✓ NJ DCA CE credits — pending NJ Board approval</div>
+                <a href="#submit-project" style="display: block; background: var(--gold); color: var(--navy-dark); padding: 12px; border-radius: 4px; font-size: 14px; font-weight: 700; text-align: center; text-decoration: none;">Apply to the Academy</a>
+              </div>
             </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
-              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Six-week Master Builder Academy</li>
-              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> HomeGuard Gold Seal or Certified credential</li>
-              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Access to pre-qualified project pipeline</li>
-              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> First three project lead fees waived</li>
-              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Standard protective contract on every project</li>
-            </ul>
-            <a href="#submit-project" style="display: block; background: var(--gold); color: var(--navy-dark); padding: 16px 24px; border-radius: 4px; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none; margin-bottom: 12px;">Apply to the Academy</a>
-            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-align: center;">Licensed NJ contractors only · 20 founding spots</p>
           </div>
         </div>
-      </div>
-    </div>
 
     <!-- PREMIER SEAL PANEL -->
     <div id="panel-premier" style="display: none;">
@@ -1886,54 +2006,6 @@ function showAudience(tab, btn) {
   </div>
 </section>
 
-<!-- CERTIFICATION -->
-<section class="certification" id="certification">
-  <div class="section-inner">
-    <div class="section-eyebrow">Contractor Certification</div>
-    <h2 class="section-title">The HomeGuard Gold Seal.</h2>
-    <p class="section-lead">Two certification tiers, both earned through the same rigorous six-week Academy program. One more distinguished than the other.</p>
-
-    <div class="cert-grid">
-      <div class="cert-card standard">
-        <span class="cert-badge">Entry Tier</span>
-        <h3>HomeGuard Certified</h3>
-        <div class="cert-price">
-          <div class="cert-price-main">$3,000 <span class="cert-strikethrough">$5,000</span></div>
-          <div class="cert-price-note">Founding cohort introductory rate — 20 spots only</div>
-        </div>
-        <ul class="cert-features">
-          <li><span class="cert-check">✓</span> All six Academy modules completed</li>
-          <li><span class="cert-check">✓</span> NJ Consumer Law compliance certification</li>
-          <li><span class="cert-check">✓</span> Background and financial standing verified</li>
-          <li><span class="cert-check">✓</span> HomeGuard Certified Seal issued</li>
-          <li><span class="cert-check">✓</span> Standard network listing</li>
-          <li><span class="cert-check">✓</span> Annual renewal at $5,000 — CE credits pending NJ Board approval</li>
-        </ul>
-        <a href="#submit-project" class="split-btn-homeowner" style="font-size:14px;">Apply to the Academy</a>
-      </div>
-
-      <div class="cert-card gold">
-        <span class="cert-badge">⭐ Distinction Tier</span>
-        <h3>HomeGuard Gold Seal</h3>
-        <div class="cert-price">
-          <div class="cert-price-intro">Earned at distinction</div>
-          <div class="cert-price-main">Gold Seal</div>
-          <div class="cert-price-note">Awarded upon final exam score of 90% or above</div>
-        </div>
-        <ul class="cert-features">
-          <li><span class="cert-check">✓</span> All Certified tier requirements plus</li>
-          <li><span class="cert-check">✓</span> Final exam score 90% or above</li>
-          <li><span class="cert-check">✓</span> Business credit established and verified</li>
-          <li><span class="cert-check">✓</span> Priority placement in homeowner referral network</li>
-          <li><span class="cert-check">✓</span> NJ DCA CE credits — pending NJ Board approval</li>
-          <li><span class="cert-check">✓</span> Gold Seal for truck, website, and marketing materials</li>
-          <li><span class="cert-check">✓</span> Advanced module access at preferred rates</li>
-        </ul>
-        <a href="#submit-project" class="split-btn-contractor" style="font-size:14px;">Apply to the Academy</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- COMPARISON -->
 <section class="comparison">
@@ -1941,13 +2013,12 @@ function showAudience(tab, btn) {
     <div class="section-eyebrow">How We Compare</div>
     <h2 class="section-title">Not a directory. Not a marketplace. A standard.</h2>
     <p class="section-lead">Angie's List certifies a contractor paid their membership fee. Thumbtack certifies a contractor answered their phone. HomeGuard certifies a contractor earned a credential — and stands behind their work.</p>
+    <p style="font-size: 15px; color: var(--gray-600); margin-top: 8px;">Two tables. One for homeowners. One for contractors. Read yours.</p>
 
     <!-- HOMEOWNER TABLE -->
-    <div style="margin-top: 48px; margin-bottom: 12px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px; background: var(--navy-dark); padding: 10px 20px; border-radius: 4px;">
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light);">For Homeowners</span>
-        <span style="font-size: 12px; color: rgba(255,255,255,0.6);">HomeGuard vs. Angie's List / Thumbtack / Nextdoor</span>
-      </div>
+    <div class="compare-section-label">
+      <span class="compare-section-label-badge">For Homeowners</span>
+      <span class="compare-section-label-sub">HomeGuard vs. Angie's List / Thumbtack / Nextdoor</span>
     </div>
     <table class="compare-table">
       <thead>
@@ -2002,11 +2073,9 @@ function showAudience(tab, btn) {
     </table>
 
     <!-- CONTRACTOR TABLE -->
-    <div style="margin-top: 56px; margin-bottom: 12px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px; background: var(--navy-dark); padding: 10px 20px; border-radius: 4px;">
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light);">For Contractors</span>
-        <span style="font-size: 12px; color: rgba(255,255,255,0.6);">HomeGuard Gold Seal vs. Angie's List / Thumbtack / No Platform</span>
-      </div>
+    <div class="compare-section-label">
+      <span class="compare-section-label-badge">For Contractors</span>
+      <span class="compare-section-label-sub">HomeGuard Gold Seal vs. Angie's List / Thumbtack / On Your Own</span>
     </div>
     <table class="compare-table">
       <thead>
