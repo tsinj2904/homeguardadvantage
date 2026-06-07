@@ -1048,10 +1048,11 @@
 
   .compare-table {
     width: 100%;
-    margin-top: 48px;
+    margin-top: 24px;
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid var(--gray-200);
   }
 
   .compare-table th {
@@ -1060,22 +1061,30 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     text-align: left;
+    border-right: 2px solid rgba(255,255,255,0.15);
   }
 
-  .compare-table th:first-child { background: var(--gray-100); color: var(--gray-600); }
-  .compare-table th.homeguard { background: var(--navy-dark); color: var(--gold-light); }
+  .compare-table th:last-child { border-right: none; }
+  .compare-table th:first-child { background: var(--gray-100); color: var(--gray-600); border-right: 2px solid var(--gray-200); }
+  .compare-table th.homeguard { background: var(--navy-dark); color: var(--gold-light); border-right: 3px solid var(--gold); }
   .compare-table th.others { background: var(--gray-200); color: var(--gray-600); }
 
   .compare-table td {
     padding: 14px 20px;
     font-size: 14px;
     border-bottom: 1px solid var(--gray-200);
+    border-right: 1px solid var(--gray-200);
+    vertical-align: top;
   }
 
+  .compare-table td:last-child { border-right: none; }
   .compare-table tr:last-child td { border-bottom: none; }
   .compare-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  .compare-table tr:nth-child(even) td.yes { background: rgba(42,122,59,0.05); }
+  .compare-table tr:nth-child(even) td.no { background: rgba(163,48,48,0.03); }
 
-  .compare-table td:first-child { color: var(--gray-600); font-weight: 500; }
+  .compare-table td:first-child { color: var(--gray-600); font-weight: 500; border-right: 2px solid var(--gray-200); }
+  .compare-table td:nth-child(2) { border-right: 3px solid var(--gold); }
   .compare-table td.yes { color: #2A7A3B; font-weight: 600; }
   .compare-table td.no { color: #A33030; }
 
@@ -1456,77 +1465,303 @@
   </div>
 </div>
 
-<!-- SPLIT: FOR BOTH AUDIENCES -->
-<section class="split" id="homeowners">
-  <div class="section-inner">
-    <div class="section-eyebrow">For Homeowners</div>
-    <h2 class="section-title">Every home service you need.<br>One call, one click, and it's done.</h2>
-    <p class="section-lead">Gold Seal certified contractors for renovation and construction. Premier Seal vetted providers for every other home service — landscaping, cleaning, restoration, tree removal, pool, snow, and more. Every provider on HomeGuard has been vetted, insured, and trained to the HomeGuard standard.</p>
-    <div class="audience-grid">
-      <ul class="audience-benefits">
-        <li><span class="benefit-check-lg">✓</span> Submit any home service request and receive an accurate, unbiased estimate</li>
-        <li><span class="benefit-check-lg">✓</span> Get matched to a Gold Seal or Premier Seal certified provider</li>
-        <li><span class="benefit-check-lg">✓</span> Standard protective contract in place before work begins</li>
-        <li><span class="benefit-check-lg">✓</span> Milestone-based financing — you never fund work that isn't done</li>
-        <li><span class="benefit-check-lg">✓</span> Success Institute as written arbitrator if disputes arise</li>
-        <li><span class="benefit-check-lg">✓</span> Every provider background checked, insured, and trained</li>
-        <li><span class="benefit-check-lg">✓</span> Real-time scheduling — book in one click through the portal</li>
-      </ul>
-      <div class="audience-cta-box">
-        <div class="audience-cta-title">Ready to protect your project?</div>
-        <p class="audience-cta-text">Submit your project details and we will review it, provide an unbiased estimate, and match you with the right certified provider — with a standard protective contract in place before any work begins.</p>
-        <a href="#submit-project" class="btn-primary">Submit Your Project</a>
+<!-- AUDIENCE TABS -->
+<section style="background: var(--cream); padding: 80px 48px;" id="homeowners">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+    <!-- TAB BUTTONS -->
+    <div style="display: flex; gap: 0; border-bottom: 2px solid var(--gray-200); margin-bottom: 56px;">
+      <button onclick="showAudience('homeowner', this)" id="btn-homeowner" style="padding: 16px 32px; font-size: 15px; font-weight: 600; color: var(--navy-dark); background: none; border: none; border-bottom: 3px solid var(--gold); margin-bottom: -2px; cursor: pointer; font-family: var(--sans);">For Homeowners</button>
+      <button onclick="showAudience('contractor', this)" id="btn-contractor" style="padding: 16px 32px; font-size: 15px; font-weight: 600; color: var(--gray-400); background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; font-family: var(--sans);" id="contractors">For Contractors</button>
+      <button onclick="showAudience('premier', this)" id="btn-premier" style="padding: 16px 32px; font-size: 15px; font-weight: 600; color: var(--gray-400); background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; font-family: var(--sans);">For Premier Seal Providers</button>
+    </div>
+
+    <!-- HOMEOWNER PANEL -->
+    <div id="panel-homeowner">
+      <div style="max-width: 800px; margin-bottom: 48px;">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">For Homeowners</div>
+        <h2 style="font-family: var(--serif); font-size: 36px; color: var(--navy-dark); margin-bottom: 16px; font-weight: 400;">Every home service you need.<br><em>One call, one click, and it's done.</em></h2>
+        <p style="font-size: 17px; color: var(--gray-600); line-height: 1.7;">Before any provider touches your home — they have been trained, tested, vetted, and certified to a standard that no other platform requires. Here is exactly what HomeGuard does on your behalf.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <div>
+
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">What We Do Before Anyone Arrives</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Six-week rigorous business training</strong> — every Gold Seal contractor completes NJ consumer law, financial management, estimating, and business operations before earning their credential</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Comprehensive final exam</strong> — objective, standardized, cannot be purchased. 90%+ earns Gold Seal. The same bar for everyone</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Background check and financial verification</strong> — every contractor, every provider, before any credential is issued</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">License and insurance verified</strong> — current NJ HIC registration and minimum $1M general liability confirmed on file</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Premier Seal providers vetted</strong> — every landscaper, cleaner, pool company, and home service provider is background checked, insured, reference-verified, and trained before listing</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">What Protects You During the Project</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Standard protective contract</strong> — in place before a single nail is driven. Scope, price, timeline, and warranty terms all documented</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Milestone-based financing</strong> — your funds are released as verified work is completed. You never pay for work that has not been done</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Unbiased estimate first</strong> — before any contractor is involved, HomeGuard tells you what your project should realistically cost in your NJ county</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Ongoing performance monitoring</strong> — every certified provider is monitored after credentialing. Advisory, Intervention, Suspension. The credential can be revoked</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">What Backs You If Something Goes Wrong</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Written arbitration backstop</strong> — Success Institute of NJ is the named arbitrator on every project. You are never alone in a dispute</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Rescue contractor protocol</strong> — if a contractor abandons your project, HomeGuard assigns a certified replacement and pursues recovery on your behalf</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div>
+          <div style="background: var(--navy-dark); border-radius: 8px; padding: 40px; position: sticky; top: 90px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">The HomeGuard Promise</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; color: var(--white); margin-bottom: 16px; font-weight: 400; line-height: 1.3;">We do not just certify them.<br><em style="color: var(--gold-light);">We stand behind their work.</em></h3>
+            <p style="font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 28px;">Every provider on HomeGuard earned their credential through a process that cannot be purchased. Every project is protected from estimate to completion. Every homeowner has real recourse if something goes wrong.</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="width: 28px; height: 28px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--navy-dark); flex-shrink: 0;">1</span>
+                <span style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Certified — earned, not purchased</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="width: 28px; height: 28px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--navy-dark); flex-shrink: 0;">2</span>
+                <span style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Monitored — credential follows the work</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="width: 28px; height: 28px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--navy-dark); flex-shrink: 0;">3</span>
+                <span style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Backed — we stand behind every job</span>
+              </div>
+            </div>
+            <a href="#submit-project" style="display: block; background: var(--gold); color: var(--navy-dark); padding: 16px 24px; border-radius: 4px; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none;">Submit Your Project</a>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- CONTRACTOR PANEL -->
+    <div id="panel-contractor" style="display: none;" id="contractors">
+      <div style="max-width: 800px; margin-bottom: 48px;">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">For Gold Seal Contractors</div>
+        <h2 style="font-family: var(--serif); font-size: 36px; color: var(--navy-dark); margin-bottom: 16px; font-weight: 400;">Stop chasing bad clients.<br><em>Start earning better ones.</em></h2>
+        <p style="font-size: 17px; color: var(--gray-600); line-height: 1.7;">The HomeGuard Gold Seal is not a compliance checkbox. It is the only credential in NJ home services that cannot be purchased — only earned. And it levels the playing field for every contractor who does things right.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <div>
+
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">The Gold Seal Academy — Six Weeks</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">NJ Consumer Law</strong> — know exactly what your legal obligations are and how to protect yourself on every project</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Financial management</strong> — cash flow, pricing for profit, milestone billing, and how to stop working for free</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Advanced estimating</strong> — build estimates that win jobs and make money, not just the lowest bid</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Client communication</strong> — manage expectations, handle disputes, and build relationships that generate referrals</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Scaling your business</strong> — systems, hiring, subcontractors, and how to grow without losing control</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Comprehensive final exam</strong> — objective and standardized. 90%+ earns Gold Seal. 80–89% earns HomeGuard Certified</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">What the Gold Seal Does For Your Business</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Pre-qualified exclusive leads</strong> — one contractor per project. No bidding wars. Pre-scoped, budget-verified, ready to sign</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Milestone financing in escrow</strong> — funds are held before you start. You release them as work is verified. No more chasing payments</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">The level playing field</strong> — only licensed, insured, certified contractors in the network. You never compete against Chuck in a truck again</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Your warranty means something</strong> — backed by HomeGuard's arbitration backstop. Homeowners know if something goes wrong there is a real process</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Gold Seal on your truck, website, and marketing</strong> — the credential that signals you earned the standard, not paid for it</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">NJ DCA continuing education credits</strong> — pending NJ Board approval. Annual renewal keeps your credential and CE current</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div>
+          <div style="background: var(--navy-dark); border-radius: 8px; padding: 40px; position: sticky; top: 90px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Founding Cohort — 20 Spots</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; color: var(--white); margin-bottom: 16px; font-weight: 400;">The credential that<br><em style="color: var(--gold-light);">cannot be purchased.</em></h3>
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 42px; font-weight: 900; color: var(--gold-light); font-family: var(--serif); line-height: 1;">$3,000</div>
+              <div style="font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: line-through; margin-top: 4px;">Standard rate $5,000 after cohort fills</div>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Six-week Master Builder Academy</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> HomeGuard Gold Seal or Certified credential</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Access to pre-qualified project pipeline</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> First three project lead fees waived</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Standard protective contract on every project</li>
+            </ul>
+            <a href="#submit-project" style="display: block; background: var(--gold); color: var(--navy-dark); padding: 16px 24px; border-radius: 4px; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none; margin-bottom: 12px;">Apply to the Academy</a>
+            <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-align: center;">Licensed NJ contractors only · 20 founding spots</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREMIER SEAL PANEL -->
+    <div id="panel-premier" style="display: none;">
+      <div style="max-width: 800px; margin-bottom: 48px;">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">For Premier Seal Providers</div>
+        <h2 style="font-family: var(--serif); font-size: 36px; color: var(--navy-dark); margin-bottom: 16px; font-weight: 400;">Stop competing with unvetted operators.<br><em>Join the standard.</em></h2>
+        <p style="font-size: 17px; color: var(--gray-600); line-height: 1.7;">HomeGuard Premier Seal covers every home service category beyond licensed contracting. The same trust promise as the Gold Seal — applied to landscaping, cleaning, pool, restoration, outdoor kitchens, smart home, and every other service homeowners need.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <div>
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">The Six Vetting Requirements</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Valid business license</strong> — for your specific service category, current and verified</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">General liability insurance</strong> — minimum $1M per occurrence, certificate on file with HomeGuard</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Background check</strong> — owner and all employees who enter homeowner properties</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Three verified customer references</strong> — contacted and confirmed by HomeGuard</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Three-module training</strong> — ethics, business standards, and customer service through Google Classroom</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">HomeGuard Standards Agreement</strong> — signed commitment to conduct and quality standards, annual re-verification</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-pale);">What You Get</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Exclusive pre-qualified leads</strong> — not shared with competitors. Homeowners specifically chose a vetted provider</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">Premier Seal on your truck and website</strong> — the credential that separates you from every unvetted operator</span>
+              </li>
+              <li style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="color: var(--gold); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px;">✓</span>
+                <span style="font-size: 15px; color: var(--gray-600); line-height: 1.5;"><strong style="color: var(--navy-dark);">HomeGuard portal listing</strong> — homeowners searching for your service category find you directly</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div style="background: var(--navy-dark); border-radius: 8px; padding: 40px; position: sticky; top: 90px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">Founding Provider Network</div>
+            <h3 style="font-family: var(--serif); font-size: 24px; color: var(--white); margin-bottom: 16px; font-weight: 400; line-height: 1.3;">Every home service.<br><em style="color: var(--gold-light);">One standard.</em></h3>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 24px;">Landscaping · Cleaning · Tree Removal · Pool · Restoration · Fencing · Outdoor Kitchens · Smart Home · Security Cameras · Senior Proofing · Baby Proofing · And more</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Annual listing fee $500–$1,000 by category</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> $100/month portal access and lead fee</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Annual re-verification $250</li>
+              <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8);"><span style="color: var(--gold); font-weight: 700;">✓</span> Exclusive leads — not shared</li>
+            </ul>
+            <a href="#submit-project" style="display: block; background: var(--gold); color: var(--navy-dark); padding: 16px 24px; border-radius: 4px; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none;">Apply for Premier Seal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="split contractors-section" id="contractors">
-  <div class="section-inner">
-    <div class="section-eyebrow">For Gold Seal Contractors</div>
-    <h2 class="section-title">Stop chasing bad clients.<br>Start earning better ones.</h2>
-    <p class="section-lead">The HomeGuard Gold Seal is not a compliance checkbox. It is a business credential that signals to homeowners you operate at the highest standard — and gives you access to a pre-qualified project pipeline.</p>
-    <div class="audience-grid">
-      <ul class="audience-benefits contractors">
-        <li><span class="benefit-check-lg gold">✓</span> Six-week business certification covering law, finance, and operations</li>
-        <li><span class="benefit-check-lg gold">✓</span> Access to pre-qualified homeowner project referrals</li>
-        <li><span class="benefit-check-lg gold">✓</span> Standard contract framework that protects you legally</li>
-        <li><span class="benefit-check-lg gold">✓</span> NJ DCA continuing education credits — pending NJ Board approval</li>
-        <li><span class="benefit-check-lg gold">✓</span> Arbitration backstop reduces your litigation exposure</li>
-        <li><span class="benefit-check-lg gold">✓</span> Gold Seal on your truck, site, and marketing materials</li>
-      </ul>
-      <div class="audience-cta-box contractors">
-        <div class="audience-cta-title contractors-title">Ready to earn your Gold Seal?</div>
-        <p class="audience-cta-text contractors-text">Founding cohort — 20 spots at $3,000. Standard rate is $5,000. Apply before the cohort fills.</p>
-        <a href="#certification" class="btn-primary">Earn Your Gold Seal</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PREMIER SEAL PROVIDERS -->
-<section class="split" id="premier-seal" style="background: var(--gray-100);">
-  <div class="section-inner">
-    <div class="section-eyebrow">For Premier Seal Providers</div>
-    <h2 class="section-title">Stop competing with unvetted operators.<br>Join the standard.</h2>
-    <p class="section-lead">HomeGuard Premier Seal certifies NJ home service businesses — landscaping, cleaning, tree removal, restoration, pool, snow removal, and every other home service category. Pre-qualified exclusive leads. Ethics and business training included.</p>
-    <div class="audience-grid">
-      <ul class="audience-benefits">
-        <li><span class="benefit-check-lg">✓</span> Premier Seal credential — background checked, insured, trained</li>
-        <li><span class="benefit-check-lg">✓</span> Access to exclusive pre-qualified homeowner leads</li>
-        <li><span class="benefit-check-lg">✓</span> Ethics, business standards, and customer service training</li>
-        <li><span class="benefit-check-lg">✓</span> HomeGuard portal listing — homeowners find you directly</li>
-        <li><span class="benefit-check-lg">✓</span> Annual re-verification keeps your credential current</li>
-        <li><span class="benefit-check-lg">✓</span> Stand apart from every unvetted competitor in your market</li>
-      </ul>
-      <div class="audience-cta-box">
-        <div class="audience-cta-title">Ready to earn your Premier Seal?</div>
-        <p class="audience-cta-text">Founding provider network — limited spots. Apply now to join the HomeGuard Premier Seal provider network and access pre-qualified NJ homeowner leads.</p>
-        <a href="#submit-project" class="btn-primary">Apply for Premier Seal</a>
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+function showAudience(tab, btn) {
+  ['homeowner','contractor','premier'].forEach(t => {
+    document.getElementById('panel-' + t).style.display = 'none';
+    document.getElementById('btn-' + t).style.color = 'var(--gray-400)';
+    document.getElementById('btn-' + t).style.borderBottomColor = 'transparent';
+  });
+  document.getElementById('panel-' + tab).style.display = 'block';
+  btn.style.color = 'var(--navy-dark)';
+  btn.style.borderBottomColor = 'var(--gold)';
+}
+</script>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how-it-works">
@@ -1581,55 +1816,6 @@
           <h4>Earn your Gold Seal</h4>
           <p>Receive the HomeGuard Gold Seal, access to the pre-qualified homeowner project pipeline, and NJ DCA continuing education credits — pending NJ Board approval. Renew annually to maintain your standing.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATION -->
-<section class="certification" id="certification">
-  <div class="section-inner">
-    <div class="section-eyebrow">Contractor Certification</div>
-    <h2 class="section-title">The HomeGuard Gold Seal.</h2>
-    <p class="section-lead">Two certification tiers, both earned through the same rigorous six-week Academy program. One more distinguished than the other.</p>
-
-    <div class="cert-grid">
-      <div class="cert-card standard">
-        <span class="cert-badge">Entry Tier</span>
-        <h3>HomeGuard Certified</h3>
-        <div class="cert-price">
-          <div class="cert-price-main">$3,000 <span class="cert-strikethrough">$5,000</span></div>
-          <div class="cert-price-note">Founding cohort introductory rate — 20 spots only</div>
-        </div>
-        <ul class="cert-features">
-          <li><span class="cert-check">✓</span> All six Academy modules completed</li>
-          <li><span class="cert-check">✓</span> NJ Consumer Law compliance certification</li>
-          <li><span class="cert-check">✓</span> Background and financial standing verified</li>
-          <li><span class="cert-check">✓</span> HomeGuard Certified Seal issued</li>
-          <li><span class="cert-check">✓</span> Standard network listing</li>
-          <li><span class="cert-check">✓</span> Annual renewal at $5,000 — CE credits pending NJ Board approval</li>
-        </ul>
-        <a href="#submit-project" class="split-btn-homeowner" style="font-size:14px;">Apply to the Academy</a>
-      </div>
-
-      <div class="cert-card gold">
-        <span class="cert-badge">⭐ Distinction Tier</span>
-        <h3>HomeGuard Gold Seal</h3>
-        <div class="cert-price">
-          <div class="cert-price-intro">Earned at distinction</div>
-          <div class="cert-price-main">Gold Seal</div>
-          <div class="cert-price-note">Awarded upon final exam score of 90% or above</div>
-        </div>
-        <ul class="cert-features">
-          <li><span class="cert-check">✓</span> All Certified tier requirements plus</li>
-          <li><span class="cert-check">✓</span> Distinction-level deliverables across all modules</li>
-          <li><span class="cert-check">✓</span> Peer review board evaluation passed</li>
-          <li><span class="cert-check">✓</span> Priority placement in homeowner referral network</li>
-          <li><span class="cert-check">✓</span> NJ DCA CE credits — pending NJ Board approval</li>
-          <li><span class="cert-check">✓</span> Gold Seal for truck, website, and marketing materials</li>
-          <li><span class="cert-check">✓</span> Advanced module access at preferred rates</li>
-        </ul>
-        <a href="#submit-project" class="split-btn-contractor" style="font-size:14px;">Apply to the Academy</a>
       </div>
     </div>
   </div>
@@ -1697,6 +1883,55 @@
       <p>Already have bids from other contractors? HomeGuard also offers a <strong>Contractor Bid Review</strong> — an independent analysis of any existing bids to verify they are fair, complete, and legally sound before you sign anything. <a href="#submit-project">Ask us about this service.</a></p>
     </div>
 
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section class="certification" id="certification">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contractor Certification</div>
+    <h2 class="section-title">The HomeGuard Gold Seal.</h2>
+    <p class="section-lead">Two certification tiers, both earned through the same rigorous six-week Academy program. One more distinguished than the other.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card standard">
+        <span class="cert-badge">Entry Tier</span>
+        <h3>HomeGuard Certified</h3>
+        <div class="cert-price">
+          <div class="cert-price-main">$3,000 <span class="cert-strikethrough">$5,000</span></div>
+          <div class="cert-price-note">Founding cohort introductory rate — 20 spots only</div>
+        </div>
+        <ul class="cert-features">
+          <li><span class="cert-check">✓</span> All six Academy modules completed</li>
+          <li><span class="cert-check">✓</span> NJ Consumer Law compliance certification</li>
+          <li><span class="cert-check">✓</span> Background and financial standing verified</li>
+          <li><span class="cert-check">✓</span> HomeGuard Certified Seal issued</li>
+          <li><span class="cert-check">✓</span> Standard network listing</li>
+          <li><span class="cert-check">✓</span> Annual renewal at $5,000 — CE credits pending NJ Board approval</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-homeowner" style="font-size:14px;">Apply to the Academy</a>
+      </div>
+
+      <div class="cert-card gold">
+        <span class="cert-badge">⭐ Distinction Tier</span>
+        <h3>HomeGuard Gold Seal</h3>
+        <div class="cert-price">
+          <div class="cert-price-intro">Earned at distinction</div>
+          <div class="cert-price-main">Gold Seal</div>
+          <div class="cert-price-note">Awarded upon final exam score of 90% or above</div>
+        </div>
+        <ul class="cert-features">
+          <li><span class="cert-check">✓</span> All Certified tier requirements plus</li>
+          <li><span class="cert-check">✓</span> Final exam score 90% or above</li>
+          <li><span class="cert-check">✓</span> Business credit established and verified</li>
+          <li><span class="cert-check">✓</span> Priority placement in homeowner referral network</li>
+          <li><span class="cert-check">✓</span> NJ DCA CE credits — pending NJ Board approval</li>
+          <li><span class="cert-check">✓</span> Gold Seal for truck, website, and marketing materials</li>
+          <li><span class="cert-check">✓</span> Advanced module access at preferred rates</li>
+        </ul>
+        <a href="#submit-project" class="split-btn-contractor" style="font-size:14px;">Apply to the Academy</a>
+      </div>
+    </div>
   </div>
 </section>
 
