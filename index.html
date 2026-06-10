@@ -1519,14 +1519,6 @@
 </div>
 
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top" style="display:none; position:fixed; bottom:32px; right:32px; z-index:999; width:52px; height:52px; background:var(--navy-dark); color:var(--gold-light); border:2px solid var(--gold); border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(15,35,71,0.3); align-items:center; justify-content:center; font-weight:700;">↑</button>
-<script>
-window.addEventListener('scroll', function() {
-  var btn = document.getElementById('scrollTopBtn');
-  btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
-});
-</script>
-
 <!-- AUDIENCE TABS -->
 <section style="background: var(--cream); padding: 80px 48px;" id="homeowners">
   <div style="max-width: 1100px; margin: 0 auto;">
@@ -2138,7 +2130,7 @@ function showAudience(tab, btn) {
 
         <div class="hg-preapproval">
           <div class="headline">Every HomeGuard lead arrives like a mortgage pre-approval.</div>
-          <div class="body">The homeowner already knows what the project costs. Their budget is confirmed. Expectations are set before your name is mentioned. You show up to close — not to educate. No one tells a doctor or a mechanic to bring their own materials. The HomeGuard Standard treats you like the professional you are.</div>
+          <div class="body">The homeowner already knows what the project costs. Their budget is confirmed. Expectations are set before your name is mentioned. You show up to close — not to educate. And the "I'll supply the materials, just charge me for labor" conversation? HomeGuard eliminated it before you walked in. Contractor-managed procurement is required on every project — because that scenario always costs the contractor more than it saves the homeowner.</div>
         </div>
 
         <div class="hg-section-label">Your frustrations — eliminated</div>
@@ -2497,6 +2489,15 @@ function handleSubmit(e) {
   btn.style.background = '#2A7A3B';
   btn.disabled = true;
 }
+</script>
+
+<!-- SCROLL TO TOP -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top" style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; width:52px; height:52px; background:var(--navy-dark); color:var(--gold-light); border:2px solid var(--gold); border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(15,35,71,0.3); align-items:center; justify-content:center; font-weight:700;">↑</button>
+<script>
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('scrollTopBtn');
+  btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+});
 </script>
 
 </body>

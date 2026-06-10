@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HomeGuard Premier Seal — The vetting standard for every home service beyond licensed contracting. Landscaping, cleaning, pool, restoration, and more. Stop competing with unvetted operators.">
+<title>Premier Seal | HomeGuard Advantage | Success Institute of NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B3A6B; --navy-dark: #0F2347; --navy-light: #2A4F8A;
+    --gold: #966F0A; --gold-light: #C49A1E; --gold-pale: #FDF3DC;
+    --cream: #FAFAF7; --white: #FFFFFF;
+    --gray-100: #F4F4F0; --gray-200: #E8E8E2; --gray-400: #9B9B8E;
+    --gray-600: #5A5A52; --gray-800: #2C2C28;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--gray-800); line-height: 1.6; font-size: 16px; overflow-x: hidden; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--navy-dark); border-bottom: 2px solid var(--gold); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-seal { width: 36px; height: 36px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 14px; color: var(--navy-dark); font-weight: 700; }
+  .nav-name { font-family: var(--serif); font-size: 18px; color: var(--white); }
+  .nav-name span { color: var(--gold-light); }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a.active { color: var(--gold-light); }
+  .nav-cta { background: var(--gold) !important; color: var(--navy-dark) !important; padding: 8px 20px !important; border-radius: 4px; font-weight: 600 !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+  .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--navy-dark); border-bottom: 2px solid var(--gold); z-index: 99; padding: 16px 0; }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a { display: block; padding: 14px 24px; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 16px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .mobile-menu a.mobile-cta { margin: 12px 24px 4px; background: var(--gold); color: var(--navy-dark); border-radius: 4px; text-align: center; font-weight: 600; border-bottom: none; }
+
+  .breadcrumb { background: var(--navy); padding: 12px 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.4); }
+  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--gold-light); }
+  .breadcrumb-sep { color: rgba(255,255,255,0.2); }
+  .breadcrumb-current { color: var(--gold-light); }
+
+  .page-hero { background: var(--navy-dark); padding: 80px 2rem 72px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -80px; right: -120px; width: 500px; height: 500px; border: 1px solid rgba(150,111,10,0.12); border-radius: 50%; pointer-events: none; }
+  .page-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .page-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(150,111,10,0.15); border: 1px solid rgba(150,111,10,0.3); color: var(--gold-light); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; margin-bottom: 24px; }
+  .page-hero h1 { font-family: var(--serif); font-size: clamp(38px,5vw,64px); color: var(--white); line-height: 1.1; margin-bottom: 20px; max-width: 700px; }
+  .page-hero h1 em { font-style: italic; color: var(--gold-light); }
+  .page-hero-sub { font-size: 19px; color: rgba(255,255,255,0.7); max-width: 620px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--navy-dark); padding: 14px 32px; border-radius: 4px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-block; }
+  .btn-secondary { background: transparent; color: var(--white); padding: 14px 32px; border-radius: 4px; font-weight: 500; font-size: 15px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); display: inline-block; }
+
+  section { padding: 0 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 64px 0; }
+  .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .section-title { font-family: var(--serif); font-size: clamp(28px,4vw,44px); color: var(--navy-dark); line-height: 1.15; margin-bottom: 16px; }
+  .section-lead { font-size: 18px; color: var(--gray-600); max-width: 640px; line-height: 1.7; font-weight: 300; }
+
+  /* SERVICE CATEGORIES */
+  .categories { background: var(--white); border-bottom: 2px solid var(--gold); }
+  .category-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
+  .category-card { background: var(--gray-100); border-radius: 8px; padding: 20px 18px; border-top: 3px solid var(--gray-200); text-align: center; }
+  .category-icon { font-size: 28px; margin-bottom: 10px; }
+  .category-name { font-size: 14px; font-weight: 600; color: var(--navy-dark); margin-bottom: 4px; }
+  .category-price { font-size: 12px; color: var(--gold); font-weight: 600; }
+
+  /* VETTING */
+  .vetting { background: var(--navy-dark); border-bottom: 2px solid var(--gold); }
+  .vetting .section-title { color: var(--white); }
+  .vetting .section-lead { color: rgba(255,255,255,0.65); }
+  .vetting .section-eyebrow { color: var(--gold-light); }
+  .vetting-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+  .vetting-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--gold); border-radius: 8px; padding: 28px 22px; }
+  .vetting-num { font-family: var(--serif); font-size: 36px; color: var(--gold-light); opacity: 0.5; line-height: 1; margin-bottom: 12px; }
+  .vetting-card h4 { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+  .vetting-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; font-weight: 300; }
+
+  /* STANDARDS */
+  .standards { background: var(--cream); border-bottom: 2px solid var(--gold); }
+  .standards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+  .standards-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .standards-list li { display: flex; gap: 12px; font-size: 16px; color: var(--gray-600); line-height: 1.6; }
+  .standards-list li span { color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .standards-box { background: var(--navy-dark); border-radius: 8px; padding: 36px; border-top: 4px solid var(--gold); }
+  .standards-box h3 { font-family: var(--serif); font-size: 24px; color: var(--white); margin-bottom: 16px; font-weight: 400; line-height: 1.3; }
+  .standards-box p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 12px; }
+
+  /* WHAT YOU GET */
+  .benefits { background: var(--white); border-bottom: 2px solid var(--gold); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+  .benefit-card { background: var(--gray-100); border-radius: 8px; padding: 24px 20px; border-left: 4px solid var(--gold); }
+  .benefit-card h4 { font-size: 15px; font-weight: 600; color: var(--navy-dark); margin-bottom: 10px; }
+  .benefit-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; font-weight: 300; }
+
+  /* PRICING */
+  .pricing { background: var(--navy-dark); border-bottom: 2px solid var(--gold); }
+  .pricing .section-title { color: var(--white); }
+  .pricing .section-lead { color: rgba(255,255,255,0.65); }
+  .pricing .section-eyebrow { color: var(--gold-light); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+  .price-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 28px 24px; }
+  .price-card.featured { background: rgba(150,111,10,0.12); border: 1px solid rgba(150,111,10,0.4); border-top: 3px solid var(--gold); }
+  .price-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px; }
+  .price-amount { font-family: var(--serif); font-size: 42px; color: var(--white); line-height: 1; margin-bottom: 4px; }
+  .price-period { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  .price-list li { display: flex; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .price-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  /* APPLY FORM */
+  .apply { background: var(--cream); }
+  .apply-form-wrap { background: var(--white); border-radius: 8px; padding: 48px; margin-top: 48px; border-top: 4px solid var(--gold); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label { font-size: 12px; font-weight: 600; color: var(--gray-600); letter-spacing: 0.5px; text-transform: uppercase; }
+  .form-group input, .form-group select, .form-group textarea { padding: 10px 14px; border: 1px solid var(--gray-200); border-radius: 4px; font-family: var(--sans); font-size: 15px; color: var(--gray-800); background: var(--white); transition: border-color 0.2s; outline: none; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--navy); }
+
+  footer { background: var(--navy-dark); border-top: 2px solid var(--gold); padding: 48px 2rem 32px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  .footer-brand-name { font-family: var(--serif); font-size: 22px; color: var(--white); margin-bottom: 8px; }
+  .footer-brand-name span { color: var(--gold-light); }
+  .footer-brand-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 16px; line-height: 1.6; }
+  .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-links a { font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; } .hamburger { display: flex; }
+    .category-grid { grid-template-columns: 1fr 1fr !important; }
+    .vetting-grid, .standards-grid, .benefits-grid, .pricing-grid { grid-template-columns: 1fr !important; }
+    .form-grid { grid-template-columns: 1fr !important; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.homeguardadvantage.com" class="nav-brand">
+    <div class="nav-seal">HG</div>
+    <span class="nav-name">Home<span>Guard</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://www.homeguardadvantage.com/homeowners.html">For Homeowners</a></li>
+    <li><a href="https://www.homeguardadvantage.com/contractors.html">For Contractors</a></li>
+    <li><a href="https://www.homeguardadvantage.com/premier-seal.html" class="active">Premier Seal</a></li>
+    <li><a href="https://www.homeguardadvantage.com/why-homeguard.html">Why HomeGuard</a></li>
+    <li><a href="https://www.homeguardadvantage.com/about.html">About</a></li>
+    <li><a href="https://www.homeguardadvantage.com/faq.html">FAQ</a></li>
+    <li><a href="#apply" class="nav-cta">Apply for Premier Seal</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://www.homeguardadvantage.com/homeowners.html" onclick="closeMenu()">For Homeowners</a>
+  <a href="https://www.homeguardadvantage.com/contractors.html" onclick="closeMenu()">For Contractors</a>
+  <a href="https://www.homeguardadvantage.com/premier-seal.html" onclick="closeMenu()">Premier Seal</a>
+  <a href="https://www.homeguardadvantage.com/why-homeguard.html" onclick="closeMenu()">Why HomeGuard</a>
+  <a href="https://www.homeguardadvantage.com/about.html" onclick="closeMenu()">About</a>
+  <a href="https://www.homeguardadvantage.com/faq.html" onclick="closeMenu()">FAQ</a>
+  <a href="#apply" class="mobile-cta" onclick="closeMenu()">Apply for Premier Seal</a>
+</div>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="https://www.homeguardadvantage.com">HomeGuard</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Premier Seal Providers</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">Premier Seal Providers</div>
+    <h1>Stop competing with unvetted operators.<br><em>Join the standard.</em></h1>
+    <p class="page-hero-sub">HomeGuard Premier Seal covers every home service category beyond licensed contracting. The same trust promise as the Gold Seal — applied to landscaping, cleaning, pool, restoration, outdoor kitchens, smart home, and every other service homeowners need. One standard. Every service.</p>
+    <div class="hero-ctas">
+      <a href="#apply" class="btn-primary">Apply for Premier Seal</a>
+      <a href="#vetting" class="btn-secondary">See the Requirements</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE CATEGORIES -->
+<section class="categories">
+  <div class="section-inner">
+    <div class="section-eyebrow">Service Categories</div>
+    <h2 class="section-title">Every home service. One standard.</h2>
+    <p class="section-lead">Premier Seal covers every category homeowners need beyond licensed contracting. If you service homes in New Jersey, there is a place for you in the network.</p>
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="category-icon">🌿</div>
+        <div class="category-name">Landscaping</div>
+        <div class="category-price">$500–$750 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🏠</div>
+        <div class="category-name">House Cleaning</div>
+        <div class="category-price">$500 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🌳</div>
+        <div class="category-name">Tree Removal</div>
+        <div class="category-price">$750 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🏊</div>
+        <div class="category-name">Pool Service</div>
+        <div class="category-price">$750 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🔧</div>
+        <div class="category-name">Restoration</div>
+        <div class="category-price">$1,000 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🌲</div>
+        <div class="category-name">Fencing</div>
+        <div class="category-price">$500–$750 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🔥</div>
+        <div class="category-name">Outdoor Kitchens</div>
+        <div class="category-price">$750–$1,000 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">📱</div>
+        <div class="category-name">Smart Home</div>
+        <div class="category-price">$500–$750 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">📷</div>
+        <div class="category-name">Security Cameras</div>
+        <div class="category-price">$500 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">👴</div>
+        <div class="category-name">Senior Proofing</div>
+        <div class="category-price">$500 annual listing</div>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">👶</div>
+        <div class="category-name">Baby Proofing</div>
+        <div class="category-price">$500 annual listing</div>
+      </div>
+      <div class="category-card" style="border-top-color: var(--gold); background: var(--gold-pale);">
+        <div class="category-icon">➕</div>
+        <div class="category-name">Your Category</div>
+        <div class="category-price">Contact us to discuss</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VETTING REQUIREMENTS -->
+<section class="vetting" id="vetting">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Six Vetting Requirements</div>
+    <h2 class="section-title">The same trust promise as the Gold Seal.</h2>
+    <p class="section-lead">Premier Seal cannot be purchased. Every provider must meet all six requirements before any credential is issued — and re-verify annually.</p>
+    <div class="vetting-grid">
+      <div class="vetting-card">
+        <div class="vetting-num">01</div>
+        <h4>Valid business license</h4>
+        <p>For your specific service category, current and verified. Applies to every regulated service category in New Jersey.</p>
+      </div>
+      <div class="vetting-card">
+        <div class="vetting-num">02</div>
+        <h4>General liability insurance</h4>
+        <p>Minimum $1M per occurrence. Certificate on file with HomeGuard before any listing is activated. Current verification required annually.</p>
+      </div>
+      <div class="vetting-card">
+        <div class="vetting-num">03</div>
+        <h4>Background check</h4>
+        <p>Owner and all employees who enter homeowner properties. Full background verification completed before credential is issued.</p>
+      </div>
+      <div class="vetting-card">
+        <div class="vetting-num">04</div>
+        <h4>Three verified customer references</h4>
+        <p>Contacted and confirmed by HomeGuard directly. Not self-reported. Three actual homeowners who can speak to your work.</p>
+      </div>
+      <div class="vetting-card">
+        <div class="vetting-num">05</div>
+        <h4>Three-module training</h4>
+        <p>Ethics, business standards, and customer service — delivered through Google Classroom. Required before credential is issued.</p>
+      </div>
+      <div class="vetting-card">
+        <div class="vetting-num">06</div>
+        <h4>HomeGuard Standards Agreement</h4>
+        <p>Signed commitment to conduct and quality standards. Annual re-verification required. The credential follows your ongoing performance — not just a passed test.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDS -->
+<section class="standards">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Premier Seal Standard</div>
+    <h2 class="section-title">What you commit to. What homeowners expect.</h2>
+    <p class="section-lead">The Premier Seal is bilateral. Both providers and homeowners commit to the standard. This is what makes the credential meaningful.</p>
+    <div class="standards-grid">
+      <div>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-200);">Providers Commit To</div>
+        <ul class="standards-list">
+          <li><span>✓</span><span>Responding to homeowner inquiries within 36 hours</span></li>
+          <li><span>✓</span><span>Sending only background-checked personnel to homeowner properties</span></li>
+          <li><span>✓</span><span>Maintaining active insurance and license throughout membership</span></li>
+          <li><span>✓</span><span>Completing services as scoped and agreed — no surprise additions</span></li>
+          <li><span>✓</span><span>Maintaining the conduct and quality standards of the HomeGuard Standards Agreement</span></li>
+          <li><span>✓</span><span>Annual re-verification and training module completion</span></li>
+        </ul>
+        <div style="margin-top: 24px; background: var(--gold-pale); border-left: 4px solid var(--gold); padding: 16px 20px; border-radius: 4px;">
+          <p style="font-size: 14px; color: var(--gray-600); line-height: 1.7;">Providers who do not meet the standard after issuance are subject to the same three-tier monitoring system as Gold Seal contractors — Advisory, Intervention, Suspension. The Premier Seal can be revoked.</p>
+        </div>
+      </div>
+      <div class="standards-box">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px;">Why Premier Seal Matters</div>
+        <h3>Homeowners searching for your service see the credential — not just a listing.</h3>
+        <p>Every homeowner who uses HomeGuard to find a service provider knows the Premier Seal means something. Background checked. Insured. Reference-verified. Trained. Monitored.</p>
+        <p>You are not competing against unvetted operators on HomeGuard. Every provider in your category met the same standard you did.</p>
+        <a href="#apply" style="display: block; background: var(--gold); color: var(--navy-dark); padding: 14px 24px; border-radius: 4px; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none; margin-top: 20px;">Apply for Premier Seal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="benefits">
+  <div class="section-inner">
+    <div class="section-eyebrow">What You Get</div>
+    <h2 class="section-title">The credential that separates you from every unvetted operator.</h2>
+    <p class="section-lead">Premier Seal membership is not just a listing. It is access to a platform built around homeowner trust — and homeowners who are specifically looking for vetted providers.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h4>Exclusive pre-qualified leads</h4>
+        <p>Not shared with competitors. Homeowners who come through HomeGuard are specifically looking for a vetted, Premier Seal provider in your category.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Premier Seal on your truck and website</h4>
+        <p>The credential that separates you from every unvetted operator. Homeowners know what it means — background checked, insured, reference-verified, trained.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>HomeGuard portal listing</h4>
+        <p>Homeowners searching your service category find you directly. Your listing includes your service area, categories covered, and Premier Seal status.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Arbitration backstop on disputes</h4>
+        <p>Success Institute available as neutral arbitrator if a dispute arises with a homeowner. You are never alone in a disagreement.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Monitoring protects your reputation</h4>
+        <p>The three-tier monitoring system removes bad actors from the network. The standard you earned is enforced for every provider in your category — not just you.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Annual re-verification keeps it current</h4>
+        <p>The Premier Seal reflects current standing — not a passed screening from years ago. Homeowners know your credential is active and current.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-inner">
+    <div class="section-eyebrow">Premier Seal Pricing</div>
+    <h2 class="section-title">Straightforward. No hidden fees.</h2>
+    <p class="section-lead">Annual listing fee varies by service category. Monthly portal access and lead fee is the same for everyone.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-label">Annual Listing Fee</div>
+        <div class="price-amount">$500</div>
+        <div class="price-period">to $1,000 per year depending on category</div>
+        <ul class="price-list">
+          <li>Cleaning, landscaping, security — $500</li>
+          <li>Tree removal, pool, fencing, smart home — $750</li>
+          <li>Restoration, outdoor kitchens — $1,000</li>
+          <li>Includes initial vetting and credential issuance</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-label">Monthly Portal Access</div>
+        <div class="price-amount">$100</div>
+        <div class="price-period">per month — same for all categories</div>
+        <ul class="price-list">
+          <li>Active HomeGuard portal listing</li>
+          <li>Access to homeowner lead referrals</li>
+          <li>Exclusive leads — not shared with competitors</li>
+          <li>Premier Seal digital assets for your marketing</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Annual Re-Verification</div>
+        <div class="price-amount">$250</div>
+        <div class="price-period">per year — keeps your credential current</div>
+        <ul class="price-list">
+          <li>License and insurance re-verification</li>
+          <li>Annual training module completion</li>
+          <li>Standards Agreement renewal</li>
+          <li>Premier Seal status maintained</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="apply" id="apply">
+  <div class="section-inner">
+    <div class="section-eyebrow">Premier Seal Application</div>
+    <h2 class="section-title">Apply for Premier Seal.</h2>
+    <p class="section-lead">Submit your application and a HomeGuard advisor will review it and be in touch within 48 hours to walk you through the vetting process.</p>
+    <div class="apply-form-wrap">
+      <div style="font-family: var(--serif); font-size: 24px; color: var(--navy-dark); margin-bottom: 8px;">Premier Seal Provider Application</div>
+      <div style="font-size: 14px; color: var(--gray-400); margin-bottom: 32px;">No commitment required at this stage. We will review and respond within 48 hours.</div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name" required></div>
+          <div class="form-group"><label>Business Name</label><input type="text" placeholder="Your company name" required></div>
+          <div class="form-group"><label>Service Category</label>
+            <select required>
+              <option value="">Select your primary service</option>
+              <option>Landscaping</option><option>House Cleaning</option>
+              <option>Tree Removal</option><option>Pool Service</option>
+              <option>Restoration</option><option>Fencing</option>
+              <option>Outdoor Kitchens</option><option>Smart Home</option>
+              <option>Security Cameras</option><option>Senior Proofing</option>
+              <option>Baby Proofing</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" required></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(973) 000-0000"></div>
+          <div class="form-group"><label>Service Area (Towns / Counties)</label><input type="text" placeholder="e.g. Essex County, Morris County"></div>
+          <div class="form-group"><label>Years in Business</label>
+            <select>
+              <option value="">Select years in business</option>
+              <option>Less than 1 year</option><option>1–3 years</option>
+              <option>3–5 years</option><option>5–10 years</option><option>10+ years</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Do you carry general liability insurance?</label>
+            <select>
+              <option value="">Select</option>
+              <option>Yes — $1M or more per occurrence</option>
+              <option>Yes — less than $1M per occurrence</option>
+              <option>No — not currently insured</option>
+            </select>
+          </div>
+          <div class="form-group full"><label>Tell us about your business</label>
+            <textarea placeholder="Describe your services, service area, how long you have been operating, and what you are looking to get from the HomeGuard Premier Seal network..."></textarea>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-top: 8px;">
+          <button type="submit" style="background: var(--gold); color: var(--navy-dark); border: none; padding: 14px 36px; border-radius: 4px; font-family: var(--sans); font-size: 15px; font-weight: 700; cursor: pointer;">Submit Application</button>
+          <span style="font-size: 13px; color: var(--gray-400);">We review every application personally and respond within 48 hours.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Home<span>Guard</span> Advantage</div>
+        <div class="footer-brand-sub">A program of Success Institute of New Jersey<br>501(c)(3) Nonprofit · EIN: 85-1642627<br>8 Academy Road, Caldwell, NJ 07006</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Platform</div>
+        <ul class="footer-links">
+          <li><a href="https://www.homeguardadvantage.com/homeowners.html">For Homeowners</a></li>
+          <li><a href="https://www.homeguardadvantage.com/contractors.html">For Contractors</a></li>
+          <li><a href="https://www.homeguardadvantage.com/premier-seal.html">Premier Seal</a></li>
+          <li><a href="https://www.homeguardadvantage.com/why-homeguard.html">Why HomeGuard</a></li>
+          <li><a href="https://www.homeguardadvantage.com/about.html">About</a></li>
+          <li><a href="https://www.homeguardadvantage.com/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:rick.alonso@tsinj.org">rick.alonso@tsinj.org</a></li>
+          <li><a href="tel:9736208793">973-620-8793</a></li>
+          <li><a href="https://www.homeguardadvantage.com/homeowners.html#submit-project">Submit a Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Success Institute of New Jersey · HomeGuard Advantage · All rights reserved</p>
+      <p><a href="https://tsinj.org/privacy-policy">Privacy Policy</a> · Serving Essex County, New Jersey</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+window.addEventListener('scroll', function() { document.getElementById('mobileMenu').classList.remove('open'); });
+function handleSubmit(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = 'Application received — we will be in touch within 48 hours.';
+  btn.style.background = '#2A7A3B';
+  btn.style.color = '#fff';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
