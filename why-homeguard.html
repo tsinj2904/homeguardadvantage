@@ -15,8 +15,8 @@
     --navy: #1B3A6B;
     --navy-dark: #0F2347;
     --navy-light: #2A4F8A;
-    --gold: #B8972A;
-    --gold-light: #D4AF3A;
+    --gold: #966F0A;
+    --gold-light: #C49A1E;
     --gold-pale: #FDF3DC;
     --cream: #FAFAF7;
     --white: #FFFFFF;
@@ -1058,6 +1058,187 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- CONTRACTOR ROI CALCULATOR -->
+<section style="background: var(--navy-dark); padding: 0 2rem; border-bottom: 2px solid var(--gold);">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 72px 0;">
+    <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px;">For Contractors</div>
+    <h2 style="font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); color: var(--white); margin-bottom: 12px; line-height: 1.15;">What does the Gold Seal actually cost you — and what does it return?</h2>
+    <p style="font-size: 17px; color: rgba(255,255,255,0.65); max-width: 640px; line-height: 1.7; margin-bottom: 48px; font-weight: 300;">Adjust the numbers below to match your business. The calculator uses conservative assumptions.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+
+      <!-- INPUTS -->
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 36px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px;">Your Business — Today</div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Average project value ($)</label>
+            <input id="roi-avg-project" type="number" value="18000" min="1000" step="1000"
+              style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-family: var(--sans); font-size: 16px; color: var(--white); outline: none;"
+              oninput="calcROI()">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Projects per year</label>
+            <input id="roi-projects" type="number" value="12" min="1" max="200" step="1"
+              style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-family: var(--sans); font-size: 16px; color: var(--white); outline: none;"
+              oninput="calcROI()">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Hours spent chasing bids / leads per month</label>
+            <input id="roi-bid-hours" type="number" value="20" min="0" max="200" step="1"
+              style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-family: var(--sans); font-size: 16px; color: var(--white); outline: none;"
+              oninput="calcROI()">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Your billable hourly rate ($)</label>
+            <input id="roi-hourly" type="number" value="85" min="20" step="5"
+              style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-family: var(--sans); font-size: 16px; color: var(--white); outline: none;"
+              oninput="calcROI()">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Bad debt / unpaid invoices per year ($)</label>
+            <input id="roi-bad-debt" type="number" value="8000" min="0" step="500"
+              style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-family: var(--sans); font-size: 16px; color: var(--white); outline: none;"
+              oninput="calcROI()">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div>
+        <div style="background: rgba(184,151,42,0.1); border: 1px solid rgba(184,151,42,0.35); border-radius: 8px; padding: 36px; margin-bottom: 20px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">Your Numbers — With HomeGuard</div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid rgba(184,151,42,0.2);">
+              <div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Annual revenue (current)</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">Avg project × projects/year</div>
+              </div>
+              <div id="roi-current-rev" style="font-family: var(--serif); font-size: 24px; color: var(--white);">$216,000</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid rgba(184,151,42,0.2);">
+              <div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Additional project/year (est.)</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">From exclusive pre-qualified leads — conservative +1</div>
+              </div>
+              <div id="roi-extra-rev" style="font-family: var(--serif); font-size: 24px; color: var(--gold-light);">+$18,000</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid rgba(184,151,42,0.2);">
+              <div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Time recaptured (annual value)</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">Bid-chasing hours × your rate × 12 months</div>
+              </div>
+              <div id="roi-time-val" style="font-family: var(--serif); font-size: 24px; color: var(--gold-light);">+$20,400</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid rgba(184,151,42,0.2);">
+              <div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">Bad debt eliminated</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">Escrow financing — you only release earned funds</div>
+              </div>
+              <div id="roi-debt-save" style="font-family: var(--serif); font-size: 24px; color: var(--gold-light);">+$8,000</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid rgba(184,151,42,0.2);">
+              <div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600;">HomeGuard annual cost</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">$5,000 renewal + $200/mo portal + $75/lead × 13 leads</div>
+              </div>
+              <div style="font-family: var(--serif); font-size: 24px; color: rgba(255,100,100,0.9);">−$9,375</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+              <div>
+                <div style="font-size: 16px; color: var(--white); font-weight: 700;">Estimated annual net benefit</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px;">Before Year 1 enrollment cost of $3,000–$5,000</div>
+              </div>
+              <div id="roi-net" style="font-family: var(--serif); font-size: 32px; color: var(--gold-light); font-weight: 700;">$37,025</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 16px 20px; font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6;">
+          Conservative assumptions: +1 project/year from exclusive leads, 50% reduction in bid-chasing hours, full bad debt recovery. Individual results vary. This calculator is illustrative — not a guarantee.
+        </div>
+
+        <a href="https://www.homeguardadvantage.com/#submit-project" style="display: block; margin-top: 24px; background: var(--gold); color: var(--navy-dark); padding: 16px 24px; border-radius: 4px; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none;">Apply to the Gold Seal Academy</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function fmtDollar(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+function calcROI() {
+  var avgProject = parseFloat(document.getElementById('roi-avg-project').value) || 0;
+  var projects   = parseFloat(document.getElementById('roi-projects').value) || 0;
+  var bidHrs     = parseFloat(document.getElementById('roi-bid-hours').value) || 0;
+  var hourly     = parseFloat(document.getElementById('roi-hourly').value) || 0;
+  var badDebt    = parseFloat(document.getElementById('roi-bad-debt').value) || 0;
+
+  var currentRev  = avgProject * projects;
+  var extraRev    = avgProject * 1; // conservative +1 project
+  var timeVal     = bidHrs * 0.5 * hourly * 12; // 50% time recaptured
+  var debtSave    = badDebt;
+  var hgCost      = 5000 + (200 * 12) + (75 * 13); // renewal + portal + 13 leads
+  var net         = extraRev + timeVal + debtSave - hgCost;
+
+  document.getElementById('roi-current-rev').textContent = fmtDollar(currentRev);
+  document.getElementById('roi-extra-rev').textContent   = '+' + fmtDollar(extraRev);
+  document.getElementById('roi-time-val').textContent    = '+' + fmtDollar(timeVal);
+  document.getElementById('roi-debt-save').textContent   = '+' + fmtDollar(debtSave);
+  document.getElementById('roi-net').textContent         = (net >= 0 ? '' : '−') + '$' + Math.abs(Math.round(net)).toLocaleString();
+  document.getElementById('roi-net').style.color         = net >= 0 ? 'var(--gold-light)' : 'rgba(255,100,100,0.9)';
+}
+</script>
+
+<!-- PREFERRED SUPPLIER NETWORK -->
+<section style="background: var(--navy-dark); border-bottom: 2px solid var(--gold); padding: 0 2rem;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 56px 0;">
+    <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px;">Coming 2027</div>
+    <h2 style="font-family: var(--serif); font-size: clamp(28px,4vw,40px); color: var(--white); margin-bottom: 16px; line-height: 1.2;">Purchasing power that benefits everyone in the ecosystem.</h2>
+    <p style="font-size: 17px; color: rgba(255,255,255,0.65); max-width: 680px; line-height: 1.7; margin-bottom: 40px; font-weight: 300;">One of the most overlooked advantages of a certified contractor network is what it unlocks at the supply house. Individual contractors cannot negotiate volume pricing. The HomeGuard network can — and the savings flow in three directions.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 40px;">
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--gold); border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px;">For Homeowners</div>
+        <div style="font-family: var(--serif); font-size: 28px; color: var(--white); margin-bottom: 12px;">Lower project costs</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7;">A portion of the network discount passes directly to the homeowner — reducing the total cost of their project without any compromise on materials quality. The same certified contractor. Better pricing.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--gold); border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px;">For Contractors</div>
+        <div style="font-family: var(--serif); font-size: 28px; color: var(--white); margin-bottom: 12px;">Improved margin</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7;">A portion improves the certified contractor's material margin on every job — without raising the homeowner's price. Better profit built into the network, not negotiated project by project.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--gold); border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px;">For the Platform</div>
+        <div style="font-family: var(--serif); font-size: 28px; color: var(--white); margin-bottom: 12px;">Sustained mission</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7;">A portion sustains the HomeGuard platform and its nonprofit mission — funding the certification program, monitoring infrastructure, and arbitration backstop that protects everyone in the ecosystem.</p>
+      </div>
+    </div>
+
+    <div style="background: rgba(150,111,10,0.12); border: 1px solid rgba(150,111,10,0.3); border-radius: 8px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 260px; font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7;"><strong style="color: var(--white);">HomeGuard Preferred Supplier Network launches no earlier than late 2027.</strong> Regional supply partners include ABC Supply, Kuiken Brothers, Lansing Building Products, and others. Exclusively available to active Gold Seal and Premier Seal members in good standing. Details announced to certified members first.</div>
+      <div style="background: var(--gold); color: var(--navy-dark); font-size: 11px; font-weight: 700; padding: 8px 16px; border-radius: 4px; white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0;">Coming 2027</div>
     </div>
   </div>
 </section>
