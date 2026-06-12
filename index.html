@@ -2204,6 +2204,15 @@ function showCompareTab(id, btn) {
   document.getElementById('cp-' + id).classList.add('active');
   btn.classList.add('active');
 }
+// Ensure homeowner tab is active on page load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.hg-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.hg-tab').forEach(b => b.classList.remove('active'));
+  var homeownerPanel = document.getElementById('cp-homeowner');
+  var homeownerTab = document.querySelector('.hg-tab');
+  if (homeownerPanel) homeownerPanel.classList.add('active');
+  if (homeownerTab) homeownerTab.classList.add('active');
+});
 </script>
 
 <!-- FINANCING -->
@@ -2492,11 +2501,39 @@ function handleSubmit(e) {
 </script>
 
 <!-- SCROLL TO TOP -->
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top" style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; width:52px; height:52px; background:var(--navy-dark); color:var(--gold-light); border:2px solid var(--gold); border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 4px 20px rgba(15,35,71,0.3); align-items:center; justify-content:center; font-weight:700;">↑</button>
+<style>
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  width: 52px;
+  height: 52px;
+  background: var(--navy-dark);
+  color: var(--gold-light);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(15,35,71,0.3);
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+#scrollTopBtn.visible {
+  display: flex;
+}
+</style>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top">↑</button>
 <script>
 window.addEventListener('scroll', function() {
   var btn = document.getElementById('scrollTopBtn');
-  btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  if (window.scrollY > 400) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
 });
 </script>
 
