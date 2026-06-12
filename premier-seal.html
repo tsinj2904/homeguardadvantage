@@ -565,7 +565,7 @@
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
-          <li><a href="mailto:rick.alonso@tsinj.org">rick.alonso@tsinj.org</a></li>
+          <li><a href="mailto:info@homeguardadvantage.com">info@homeguardadvantage.com</a></li>
           <li><a href="tel:9736208793">973-620-8793</a></li>
           <li><a href="https://www.homeguardadvantage.com/homeowners.html#submit-project">Submit a Project</a></li>
         </ul>
@@ -591,5 +591,40 @@ function handleSubmit(e) {
   btn.disabled = true;
 }
 </script>
+
+<!-- SCROLL TO TOP -->
+<style>
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  width: 52px;
+  height: 52px;
+  background: #0F2347;
+  color: #C49A1E;
+  border: 2px solid #966F0A;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(15,35,71,0.3);
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+#scrollTopBtn.visible {
+  display: flex;
+}
+</style>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top">↑</button>
+<script>
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('scrollTopBtn');
+  if (window.scrollY > 400) { btn.classList.add('visible'); }
+  else { btn.classList.remove('visible'); }
+});
+</script>
+
 </body>
 </html>
