@@ -144,6 +144,37 @@
     .vetting-grid, .standards-grid, .benefits-grid, .pricing-grid { grid-template-columns: 1fr !important; }
     .form-grid { grid-template-columns: 1fr !important; }
     .footer-top { grid-template-columns: 1fr; }
+    /* Credential tiers section — stack on mobile */
+    .tier-grid-mobile { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    /* Inline grid sections — stack on mobile */
+    .inline-grid-mobile { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    /* Steps section — simplify on mobile */
+    .steps-grid-mobile { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+    /* General inline grids */
+    [style*="grid-template-columns: 1fr 1fr"] { display: flex !important; flex-direction: column !important; }
+    [style*="grid-template-columns: repeat(3"] { display: flex !important; flex-direction: column !important; }
+    [style*="grid-template-columns: repeat(4"] { display: flex !important; flex-direction: column !important; }
+    /* Hero CTA buttons — stack on mobile */
+    .hero-ctas { flex-direction: column !important; }
+    .btn-primary, .btn-secondary { text-align: center; width: 100%; }
+    /* Section padding reduction on mobile */
+    .section-inner { padding: 40px 0 !important; }
+    .page-hero { padding: 48px 1.5rem 48px !important; }
+    /* Vetting card and benefit card padding on mobile */
+    .vetting-card, .benefit-card { padding: 20px 16px !important; }
+    /* Price cards stack */
+    .price-card { margin-bottom: 0 !important; }
+  }
+  @media (max-width: 480px) {
+    .category-grid { grid-template-columns: 1fr !important; }
+    .apply-form-wrap { padding: 24px 16px !important; }
+
+    /* Inline multi-column grids — stack on mobile */
+    [style*="grid-template-columns: 1fr 1fr 1fr"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    [style*="grid-template-columns: repeat(3"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    [style*="grid-template-columns: repeat(4"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
+    .btn-primary, .btn-secondary { text-align: center !important; }
   }
 </style>
 </head>
@@ -265,7 +296,7 @@
         <div class="category-price">$500 annual listing</div>
       </div>
       <div class="category-card">
-        <div class="category-icon">🏠</div>
+        <div class="category-icon">🪣</div>
         <div class="category-name">Residential Floor Coating</div>
         <div class="category-price">$750–$1,000 annual listing</div>
       </div>
@@ -281,7 +312,7 @@
 <!-- VETTING REQUIREMENTS -->
 <section class="vetting" id="vetting">
   <div class="section-inner">
-    <div class="section-eyebrow">The Six Vetting Requirements</div>
+    <div class="section-eyebrow">The Five Vetting Requirements</div>
     <h2 class="section-title">The same trust promise as the Gold Seal.</h2>
     <p class="section-lead">Premier Seal cannot be purchased. Every provider must meet all six requirements before any credential is issued — and re-verify annually.</p>
     <div class="vetting-grid">
@@ -331,7 +362,7 @@
       <p style="font-size: 15px; color: var(--gray-600); line-height: 1.7;">Providers who do not meet the minimum score may retake the Academy exam after a six-month waiting period — the same standard used by NJ licensing boards. Providers who earn Premier Seal Certified and want to upgrade to Premier Seal Gold may also retake after six months.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+    <div class="tier-grid-mobile" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
 
       <!-- NO CREDENTIAL -->
       <div style="background: var(--gray-100); border: 1px solid var(--gray-200); border-top: 3px solid var(--gray-400); border-radius: 8px; padding: 28px 24px;">
@@ -531,8 +562,8 @@
           <div class="form-group"><label>Do you carry general liability insurance?</label>
             <select>
               <option value="">Select</option>
-              <option>Yes — $1M or more per occurrence</option>
-              <option>Yes — less than $1M per occurrence</option>
+              <option>Yes — $500K or more per occurrence</option>
+              <option>Yes — less than $500K per occurrence</option>
               <option>No — not currently insured</option>
             </select>
           </div>

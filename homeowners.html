@@ -177,6 +177,18 @@
     .pain-grid, .vetting-steps, .standards-grid, .guarantee-grid, .financing-grid, .journey-steps { grid-template-columns: 1fr !important; }
     .form-grid { grid-template-columns: 1fr !important; }
     .footer-top { grid-template-columns: 1fr; }
+    /* Inline multi-column grids — stack on mobile */
+    [style*="grid-template-columns: 1fr 1fr 1fr"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    [style*="grid-template-columns: repeat(3"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    [style*="grid-template-columns: repeat(4"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+    /* Hero CTA buttons stack on mobile */
+    .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
+    .btn-primary, .btn-secondary { text-align: center !important; }
+  }
+  @media (max-width: 480px) {
+    .section-inner { padding: 32px 0 !important; }
+    .page-hero { padding: 40px 1.25rem !important; }
+    .apply-form-wrap, .form-wrap { padding: 20px 14px !important; }
   }
 </style>
 </head>
