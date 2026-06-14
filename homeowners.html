@@ -200,6 +200,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.homeguardadvantage.com/homeowners.html">
   <meta property="og:site_name" content="HomeGuard Advantage">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
 
@@ -243,9 +244,9 @@
   <div class="page-hero-inner">
     <div class="page-eyebrow">For Homeowners</div>
     <h1>Your home is your biggest investment.<br><em>Protect it like one.</em></h1>
-    <p class="page-hero-sub">HomeGuard is the only platform in New Jersey where every contractor is certified through a process that cannot be purchased, every project is protected by milestone escrow, and you have real recourse if anything goes wrong. One call, one click, and it's done.</p>
+    <p class="page-hero-sub">New Jersey's first contractor network where every contractor is vetted, trained, background checked, and backed by milestone escrow. Know what your project should cost before anyone arrives.</p>
     <div class="hero-ctas">
-      <a href="#submit-project" class="btn-primary">Submit Your Project</a>
+      <a href="#quick-start" class="btn-primary">Get My Project Started</a>
       <a href="#how-it-works" class="btn-secondary">See How It Works</a>
     </div>
     <div class="stat-row">
@@ -256,6 +257,59 @@
     </div>
   </div>
 </div>
+
+<!-- INSTANT LEAD CAPTURE -->
+<section id="quick-start" style="background: var(--gold); padding: 48px 2rem;">
+  <div style="max-width: 860px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 28px;">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy-dark); margin-bottom: 8px;">Get Started in 60 Seconds</div>
+      <h2 style="font-family: var(--serif); font-size: 28px; color: var(--navy-dark); margin-bottom: 8px;">Tell us about your project — we handle the rest.</h2>
+      <p style="font-size: 16px; color: rgba(15,35,71,0.75);">No commitment. No contractor contact yet. Just your project details so we can prepare your independent estimate.</p>
+    </div>
+    <div style="background: var(--white); border-radius: 8px; padding: 32px; box-shadow: 0 4px 24px rgba(15,35,71,0.15);">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <label style="display: block; font-size: 12px; font-weight: 700; color: var(--navy-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">ZIP Code</label>
+          <input type="text" placeholder="07006" maxlength="5" style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--gray-200); border-radius: 4px; font-size: 15px; font-family: var(--sans); box-sizing: border-box;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 12px; font-weight: 700; color: var(--navy-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Project Type</label>
+          <select style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--gray-200); border-radius: 4px; font-size: 15px; font-family: var(--sans); box-sizing: border-box; background: var(--white);">
+            <option value="">Select a category</option>
+            <option>Kitchen Renovation</option>
+            <option>Bathroom Renovation</option>
+            <option>Basement Finishing</option>
+            <option>Roofing</option>
+            <option>Electrical</option>
+            <option>Plumbing</option>
+            <option>HVAC</option>
+            <option>Flooring</option>
+            <option>Addition / Room</option>
+            <option>Exterior / Siding</option>
+            <option>Windows / Doors</option>
+            <option>Water Damage Restoration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label style="display: block; font-size: 12px; font-weight: 700; color: var(--navy-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Estimated Budget</label>
+          <select style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--gray-200); border-radius: 4px; font-size: 15px; font-family: var(--sans); box-sizing: border-box; background: var(--white);">
+            <option value="">Select a range</option>
+            <option>Under $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $30,000</option>
+            <option>$30,000 – $60,000</option>
+            <option>$60,000 – $100,000</option>
+            <option>Over $100,000</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="document.getElementById('submit-project').scrollIntoView({behavior:'smooth'})" style="width: 100%; background: var(--navy-dark); color: var(--white); padding: 16px; border: none; border-radius: 4px; font-size: 17px; font-weight: 700; cursor: pointer; font-family: var(--sans);">Get My Free Independent Estimate →</button>
+      <p style="text-align: center; font-size: 13px; color: var(--gray-400); margin-top: 12px; margin-bottom: 0;">No contractor contact until you approve. Reviewed within 48 hours. No commitment required.</p>
+    </div>
+  </div>
+</section>
 
 <!-- PAIN POINTS -->
 <section style="background: var(--white); border-bottom: 2px solid var(--gold);">
@@ -598,6 +652,38 @@ function handleSubmit(e) {
   btn.style.background = '#2A7A3B';
   btn.disabled = true;
 }
+</script>
+
+<!-- FLOATING CTA -->
+<style>
+#floatingCTA {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 28px;
+  z-index: 9998;
+  background: var(--gold);
+  color: var(--navy-dark);
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--sans);
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(15,35,71,0.3);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#floatingCTA.visible { display: block; }
+</style>
+<a href="#submit-project" id="floatingCTA">Start My Project ↑</a>
+<script>
+window.addEventListener('scroll', function() {
+  var cta = document.getElementById('floatingCTA');
+  if (window.scrollY > 600) { cta.classList.add('visible'); }
+  else { cta.classList.remove('visible'); }
+});
 </script>
 
 <!-- SCROLL TO TOP -->
