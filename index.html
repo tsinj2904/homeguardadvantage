@@ -1361,6 +1361,15 @@
     [style*="grid-template-columns: repeat(4"] { display: flex !important; flex-direction: column !important; gap: 16px !important; }
     .hero-ctas { flex-direction: column !important; align-items: stretch !important; }
     .btn-primary, .btn-secondary { text-align: center !important; }
+    [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    .portal-two-col { grid-template-columns: 1fr !important; }
+    .milestone-flow { grid-template-columns: 1fr !important; }
+    .milestone-flow > div:nth-child(even) { display: none; }
+    .bilateral-grid { grid-template-columns: 1fr !important; }
+    /* About section credential tiles - scroll horizontally on mobile */
+    .about-cred-tiles { overflow-x: auto !important; }
+    /* Financing tiers on homepage */
+    .hg-finance-tiers { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -1476,7 +1485,7 @@
       <div style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">A Standard That Goes Both Ways</div>
       <p style="font-size: 20px; color: var(--white); line-height: 1.6; font-weight: 400; max-width: 700px;">Certified contractors commit to the HomeGuard Standard on every project — <em style="color: var(--gold-light);">and so do the homeowners they work with.</em></p>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px;">
+    <div class="bilateral-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px;">
       <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-top: 3px solid var(--gold); border-radius: 6px; padding: 24px 28px;">
         <div style="font-size: 15px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px;">Contractors Commit To</div>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
@@ -1503,27 +1512,27 @@
 
 
 <div style="background: var(--cream); border-bottom: 1px solid var(--gray-200); padding: 32px 2rem;">
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
     <div style="flex-shrink: 0; width: 64px; height: 64px; background: var(--navy-dark); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 22px; color: var(--gold-light); font-weight: 700;">RA</div>
     <div style="flex: 1; min-width: 200px;">
       <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px;">Built by Someone Who Has Been on Both Sides</div>
-      <p style="font-size: 15px; color: var(--gray-800); line-height: 1.6; margin-bottom: 4px;"><strong>Dr. Ricardo Alonso, Ed.D., MBA</strong> — Founder &amp; Executive Director, Success Institute of NJ. 14 years as VP of Operations at Matheny Medical and Educational Center. Licensed NJ home improvement contractor. Real estate owner. He built HomeGuard because no standard existed that homeowners could trust and contractors could be proud of.</p>
+      <p style="font-size: 15px; color: var(--gray-800); line-height: 1.6; margin-bottom: 4px;"><strong>Dr. Ricardo Alonso, Ed.D., MBA</strong> — Founder &amp; Executive Director, Success Institute of New Jersey. 19 years in healthcare operations leadership. 14 years in education. Licensed NJ home improvement contractor. Real estate owner. He built HomeGuard because no standard existed that homeowners could trust and contractors could be proud of.</p>
     </div>
-    <div style="display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0;">
-      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px;">
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 1; max-width: 100%;">
+      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; flex: 1; min-width: 80px;">
         <div style="font-family: var(--serif); font-size: 22px; color: var(--navy-dark);">Ed.D.</div>
         <div style="font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Doctorate</div>
       </div>
-      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px;">
-        <div style="font-family: var(--serif); font-size: 22px; color: var(--navy-dark);">14 yrs</div>
-        <div style="font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Executive Ops</div>
+      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; flex: 1; min-width: 80px;">
+        <div style="font-family: var(--serif); font-size: 22px; color: var(--navy-dark);">19 yrs</div>
+        <div style="font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Healthcare Ops</div>
       </div>
-      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px;">
+      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; flex: 1; min-width: 80px;">
         <div style="font-family: var(--serif); font-size: 22px; color: var(--navy-dark);">NJ HIC</div>
-        <div style="font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Licensed Contractor</div>
+        <div style="font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Licensed</div>
       </div>
-      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px;">
-        <div style="font-family: var(--serif); font-size: 22px; color: var(--navy-dark); white-space: nowrap;">501(c)(3)</div>
+      <div style="text-align: center; padding: 12px 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 4px; flex: 1; min-width: 80px;">
+        <div style="font-family: var(--serif); font-size: 20px; color: var(--navy-dark);">501(c)(3)</div>
         <div style="font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px;">Nonprofit</div>
       </div>
     </div>
@@ -2295,7 +2304,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div style="background: var(--gold-pale); border: 1px solid rgba(184,151,42,0.3); border-radius: 8px; padding: 36px; margin-top: 48px; margin-bottom: 32px;">
       <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">How Your Money Is Protected</div>
       <h3 style="font-family: var(--serif); font-size: 22px; color: var(--navy-dark); margin-bottom: 24px; font-weight: 400;">Milestone Payment Flow</h3>
-      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; align-items: center;">
+      <div class="milestone-flow" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; align-items: center;">
         <div style="text-align: center; padding: 16px 8px;">
           <div style="width: 52px; height: 52px; background: var(--navy-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-family: var(--serif); font-size: 20px; color: var(--gold-light); font-weight: 700;">1</div>
           <div style="font-size: 13px; font-weight: 700; color: var(--navy-dark); margin-bottom: 6px;">Funds to Escrow</div>
@@ -2317,7 +2326,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(184,151,42,0.2); font-size: 14px; color: var(--gray-600);"><strong style="color: var(--navy-dark);">Repeat for every milestone.</strong> Final payment is released only after the completed final walkthrough sign-off. Escrow protects you at every phase — not just the beginning.</div>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+    <div class="portal-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
       <!-- WHAT HAPPENS AFTER SUBMIT TIMELINE -->
       <div style="background: var(--navy-dark); border-radius: 8px; padding: 36px; border-top: 4px solid var(--gold);">
         <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">After You Hit Submit</div>
