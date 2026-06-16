@@ -158,8 +158,12 @@
 
   /* SUPPLIER */
   .supplier-banner { background: rgba(150,111,10,0.08); border: 1px solid rgba(150,111,10,0.25); border-radius: 8px; padding: 24px 28px; margin-top: 32px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .supplier-text { flex: 1; font-size: 15px; color: var(--gray-600); line-height: 1.6; }
-  .supplier-badge { background: var(--gold); color: var(--navy-dark); font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 4px; white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; }
+  .supplier-text { flex: 1; min-width: 0; font-size: 15px; color: var(--gray-600); line-height: 1.6; }
+  .supplier-badge { background: var(--gold); color: var(--navy-dark); font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 4px; white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; align-self: flex-start; }
+  @media (max-width: 640px) {
+    .supplier-banner { flex-direction: column; align-items: flex-start; padding: 20px; }
+    .supplier-text { flex: none; width: 100%; }
+  }
 
   /* APPLY FORM */
   .apply { background: var(--navy-dark); }
