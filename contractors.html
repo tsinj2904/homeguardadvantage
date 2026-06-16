@@ -480,12 +480,12 @@
     </div>
 
     <!-- UPGRADE PATH CALLOUT -->
-    <div style="background: var(--navy-dark); border-radius: 8px; padding: 28px 32px; margin-top: 28px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;">
+    <div class="upgrade-callout">
       <div>
         <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">The Upgrade Story</div>
         <p style="font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 0;">A contractor who earns HomeGuard Certified, spends six months applying what they learned, retakes the exam, and upgrades to Gold Seal — that contractor tells every other contractor in their network what happened to their lead volume. That is the credential working exactly as designed. <strong style="color: var(--gold-light);">Both tiers have a place on this platform. Only one gets exclusive matching.</strong></p>
       </div>
-      <a href="#apply" style="background: var(--gold); color: var(--navy-dark); padding: 14px 24px; border-radius: 4px; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; text-align: center;">Start the Academy</a>
+      <a href="#apply" class="upgrade-callout-btn">Start the Academy</a>
     </div>
 
   </div>
@@ -841,6 +841,38 @@ function handleSubmit(e) {
 }
 #scrollTopBtn.visible {
   display: flex;
+}
+.upgrade-callout {
+  background: var(--navy-dark);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+.upgrade-callout-btn {
+  background: var(--gold);
+  color: var(--navy-dark);
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .upgrade-callout {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+  .upgrade-callout-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
 }
 </style>
 <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollTopBtn" title="Back to top">↑</button>
